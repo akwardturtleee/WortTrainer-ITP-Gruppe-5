@@ -10,7 +10,7 @@ public class QuizModus {
 
 	private int[] falscheAntworten ;
 
-	private Fragenpool fragenpool;
+	private Fragenpool fragenpool2;
 
 	public void starteQuiz() {
 

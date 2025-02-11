@@ -15,7 +15,6 @@ public class SpielModus {
 	public void starteSpiel() {
 
 	}
-
 	public boolean pruefeBuchstaben() {
 		return false;
 	}
