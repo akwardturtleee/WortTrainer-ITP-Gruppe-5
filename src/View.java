@@ -1,11 +1,13 @@
 package src;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class View extends JFrame {
+	private Controller controller;
 	private JFrame frame;
-	public View() {
+	JMenuItem spielItem;
+	public View(Controller controller) {
+		this.controller = controller;
 		frame = new JFrame("Worttrainer");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800, 600);
@@ -13,19 +15,50 @@ public class View extends JFrame {
 
 		JMenuBar menuBar = new JMenuBar();
 
-		JMenu beispiel1 = new JMenu("Beispiel1");
-		JMenu beispiel2 = new JMenu("Beispiel2");
-		JMenu beispiel3 = new JMenu("Beispiel3");
+		JMenu spiel = new JMenu("Spiel");
+		spiel.setPreferredSize(new Dimension(80,100));
+		Font font = new Font("Arial", Font.PLAIN, 20);
+		spiel.setFont(font);
+		spiel.setMnemonic('S');
+		JMenu benutzer = new JMenu("Benutzer");
+		benutzer.setPreferredSize(new Dimension(100,100));
+		benutzer.setMnemonic('B');
+		benutzer.setFont(font);
+		JMenu quiz = new JMenu("Quiz");
+		quiz.setPreferredSize(new Dimension(50,100));
+		quiz.setMnemonic('Q');
+		quiz.setFont(font);
 
-		JMenuItem beispiel1Item = new JMenuItem("FlorianHATeinen40cmBBC");
+		spielItem = new JMenuItem("Starten");
+		JMenuItem spielItem2 = new JMenuItem("Beenden");
+		spiel.add(spielItem);
+		spiel.add(spielItem2);
+		spielItem.addActionListener(controller);
+		spielItem.setActionCommand("spiel");
+		spielItem2.addActionListener(controller);
+		spielItem2.setActionCommand("spiel2");
 
-		beispiel1.add(beispiel1Item);
+		JMenuItem quizItem = new JMenuItem("Starten");
+		JMenuItem quizItem2 = new JMenuItem("Beenden");
+		quiz.add(quizItem);
+		quiz.add(quizItem2);
+		quizItem.addActionListener(controller);
+		quizItem.setActionCommand("quiz");
+		quizItem2.addActionListener(controller);
+		quizItem2.setActionCommand("quiz2");
 
-		menuBar.add(beispiel1);
-		menuBar.add(beispiel2);
-		menuBar.add(beispiel3);
-		frame.setJMenuBar(menuBar);
+		menuBar.add(spiel);
+		menuBar.add(benutzer);
+		menuBar.add(quiz);
+		JPanel menuPanel = new JPanel(new BorderLayout());
+		menuPanel.add(menuBar, BorderLayout.CENTER);
+		menuPanel.setPreferredSize(new Dimension(frame.getWidth(), 50));
+
+
+
+
+
+		frame.add(menuPanel, BorderLayout.NORTH);
 		frame.setVisible(true);
 	}
-
 }

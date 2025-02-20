@@ -12,12 +12,16 @@ public class QuizModus {
 
 	private Fragenpool fragenpool2;
 
+	public QuizModus(Fragenpool fragenpool) {
+
+	}
+
 	public void starteQuiz() {
 
 	}
 
 	public void beendeQuiz() {
-
+		System.exit(0);
 	}
 
 	public boolean pruefeAntwort(String eingabe, Frage frage) {
