@@ -1,6 +1,8 @@
 package src;
 
-public class Nutzer {
+import javax.swing.*;
+
+public class Nutzer extends JFrame {
 
 	private String benutzerID;
 
