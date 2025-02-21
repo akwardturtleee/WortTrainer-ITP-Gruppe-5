@@ -25,7 +25,7 @@ public class Controller {
 
 	}
 
-	public void nutzerRegisterien(String name, String email, String passwort) {
+	public void nutzerRegistrieren(String name, String email, String passwort) {
 
 	}
 

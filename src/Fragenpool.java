@@ -44,7 +44,7 @@ public class Fragenpool {
 	}
 
 
-	public void fragehinzufügn(Frage frage) {
+	public void fragehinzufügen(Frage frage) {
 
 	}
 
