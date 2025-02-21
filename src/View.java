@@ -6,12 +6,32 @@ public class View extends JFrame {
 	private Controller controller;
 	private JFrame frame;
 	JMenuItem spielItem;
+	private JPanel mainPanel;
+	private CardLayout cardLayout;
 	public View(Controller controller) {
 		this.controller = controller;
-		frame = new JFrame("Worttrainer");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(800, 600);
-		frame.setLayout(new BorderLayout(10,10));
+		//panel = new JPanel(new BorderLayout(10,10));
+		setTitle("Worttrainer");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(800, 600);
+		setLayout(new BorderLayout(10,10));
+		//panel.setVisible(true);
+		//frame.add(panel);
+
+
+
+		CardLayout cardLayout = new CardLayout();
+		mainPanel = new JPanel(cardLayout);
+		mainPanel.setLayout(new GridLayout(2,1));
+		mainPanel.setBackground(new Color(100, 149, 237));
+		JLabel willkommen = new JLabel("WILLKOMMEN ZUM WORTTRAINER", SwingConstants.CENTER);
+		mainPanel.setFont(new Font("Arial", Font.PLAIN, 50));
+		mainPanel.add(willkommen);
+
+		JPanel userPanel = new JPanel();
+		userPanel.add(new JLabel("Benutzerprofil")); // TEST!!!
+
+		mainPanel.add(userPanel);
 
 		JMenuBar menuBar = new JMenuBar();
 
@@ -22,6 +42,7 @@ public class View extends JFrame {
 
 		JMenu benutzer = new JMenu("Benutzer");
 		benutzer.setPreferredSize(new Dimension(100,100));
+
 
 		benutzer.setFont(font);
 		JMenu quiz = new JMenu("Quiz");
@@ -51,8 +72,9 @@ public class View extends JFrame {
 		quizItem2.addActionListener(controller);
 		quizItem2.setActionCommand("quiz2");
 
-		JMenuItem benutzerItem = new JMenuItem("Profil");
-		benutzerItem.setMnemonic('P');
+		JMenuItem benutzerItem = new JMenuItem("Nutzerprofil");
+		benutzerItem.setMnemonic('N');
+
 		JMenuItem benutzerItem2 = new JMenuItem("Fortschritt");
 		benutzerItem2.setMnemonic('F');
 		benutzer.add(benutzerItem);
@@ -66,22 +88,12 @@ public class View extends JFrame {
 		menuBar.add(spiel);
 		menuBar.add(benutzer);
 		menuBar.add(quiz);
+
 		JPanel menuPanel = new JPanel(new BorderLayout());
 		menuPanel.add(menuBar, BorderLayout.CENTER);
-		menuPanel.setPreferredSize(new Dimension(frame.getWidth(), 75));
+		menuPanel.setPreferredSize(new Dimension(getWidth(), 75));
 
-		JLabel schriftLabel = new JLabel("WILLKOMMEN BEIM WORTTRAINER!" , SwingConstants.CENTER);
-
-		Font fontW = new Font("Arial", Font.PLAIN, 50);
-		schriftLabel.setFont(fontW);
-		JPanel schriftPanel = new JPanel(new GridLayout(2,1));
-		schriftPanel.add(schriftLabel);
-
-		schriftPanel.setBackground(new Color(100, 149, 237));
-
-
-		frame.add(schriftPanel, BorderLayout.CENTER);
-		frame.add(menuPanel, BorderLayout.NORTH);
-		frame.setVisible(true);
+		add(menuPanel, BorderLayout.NORTH);
+		add(mainPanel, BorderLayout.CENTER);
 	}
 }

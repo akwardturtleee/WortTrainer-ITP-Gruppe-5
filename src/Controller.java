@@ -32,10 +32,9 @@ public class Controller implements ActionListener {
 					}
 					break;
 				case "benutzer":
-					// neues frame irgendwie öffnen
 					break;
 				case "benutzer2":
-					// neues frame öffnen oder man schafft es das die Hauptseite wechselt
+
 					break;
 			}
 
