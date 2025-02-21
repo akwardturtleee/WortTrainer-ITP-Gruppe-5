@@ -10,14 +10,18 @@ public class QuizModus {
 
 	private int[] falscheAntworten ;
 
-	private Fragenpool fragenpool;
+	private Fragenpool fragenpool2;
+
+	public QuizModus(Fragenpool fragenpool) {
+
+	}
 
 	public void starteQuiz() {
 
 	}
 
 	public void beendeQuiz() {
-
+		System.exit(0);
 	}
 
 	public boolean pruefeAntwort(String eingabe, Frage frage) {

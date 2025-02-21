@@ -12,10 +12,9 @@ public class SpielModus {
 
 	private Fragenpool fragenpool;
 
-	public void starteSpiel() {
+	public SpielModus() {
 
 	}
-
 	public boolean pruefeBuchstaben() {
 		return false;
 	}
@@ -24,7 +23,7 @@ public class SpielModus {
 
 	}
 
-	public boolean istSpielBeendet() {
+	public boolean spielBeenden() {
 		return false;
 	}
 

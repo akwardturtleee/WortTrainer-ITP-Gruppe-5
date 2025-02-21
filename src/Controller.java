@@ -1,56 +1,46 @@
 package src;
-import java.io.IOException;
 
-public class Controller {
-
-	private Fragenpool fragenpool;
-
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class Controller implements ActionListener {
+	private final View view;
+	private SpielModus spielModus;
 	private QuizModus quizModus;
+	private Fragenpool fragenpool;
+	public Controller() {
+        this.view = new View(this);
+    }
+	@Override
+	public void actionPerformed(ActionEvent e) {
+			switch (e.getActionCommand()) {
+				case "spiel":
+					spielModus = new SpielModus();
+					break;
+				case "spiel2":
+					if (spielModus != null) {
+						spielModus.spielBeenden();
+					}
+					break;
+				case "quiz":
+					quizModus = new QuizModus(fragenpool);
+					break;
+				case "quiz2":
+					if (quizModus != null) {
+						quizModus.beendeQuiz();
+					}
+					break;
+				case "benutzer":
+					// neues frame irgendwie öffnen
+					break;
+				case "benutzer2":
+					// neues frame öffnen oder man schafft es das die Hauptseite wechselt
+					break;
+			}
 
-	private Nutzer nutzer;
-
-	private View view;
-
-	public Controller {
-		this.fragenpool = new Fragenpool();
-		this.quizModus = new QuizModus(fragenpool);
-		this.view = new View();
 	}
-
-	public void starteQuiz() {
-
-	}
-
-	public void verarbeiteAntwort(String eingabe) {
-
-	}
-
-	public void nutzerRegistrieren(String name, String email, String passwort) {
-
-	}
-
-	public void ladeFragenpool(String dateipfad) {
-
-		try {
-			System.out.println("Fragepool erfolgreich geladen.");
-		} catch (IOException){
-			System.err.println("Fehler beim Laden" + e.getMessage());
-		}
-	}
-
-	public void speichereFragenpool(String dateipfad) {
-		try {
-			System.out.println("Fragepool erfolgreich gespeichert.");
-		} catch (IOException e) {
-			System.err.println("Fehler beim Speichern vom Fragepool:" + e.getMessage());
-		}
-	}
-	public void start() {
-		view.startMenü();
-	}
-
-	public static void main (String[]args) {
-		Controller controller = new Controller();
-		controller.start();
+	public static void main(String[] args) {
+		new Controller();
 	}
 }
