@@ -1,4 +1,7 @@
 package src;
+
+import src.Controller;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -36,9 +39,9 @@ public class View extends JFrame {
 		spiel.add(spielItem);
 		spiel.add(spielItem2);
 		spielItem.addActionListener(controller);
-		spielItem.setActionCommand("spiel");
+		spielItem.setActionCommand("Spiel");
 		spielItem2.addActionListener(controller);
-		spielItem2.setActionCommand("spiel2");
+		spielItem2.setActionCommand("Spiel2");
 
 		JMenuItem quizItem = new JMenuItem("Quiz Starten");
 		quizItem.setMnemonic('Q');
@@ -47,20 +50,20 @@ public class View extends JFrame {
 		quiz.add(quizItem);
 		quiz.add(quizItem2);
 		quizItem.addActionListener(controller);
-		quizItem.setActionCommand("quiz");
+		quizItem.setActionCommand("Quiz");
 		quizItem2.addActionListener(controller);
-		quizItem2.setActionCommand("quiz2");
+		quizItem2.setActionCommand("Quiz2");
 
-		JMenuItem benutzerItem = new JMenuItem("Profil");
+		JMenuItem benutzerItem = new JMenuItem("Nutzerprofil");
 		benutzerItem.setMnemonic('P');
 		JMenuItem benutzerItem2 = new JMenuItem("Fortschritt");
 		benutzerItem2.setMnemonic('F');
 		benutzer.add(benutzerItem);
 		benutzer.add(benutzerItem2);
 		benutzerItem.addActionListener(controller);
-		benutzerItem.setActionCommand("benutzer");
+		benutzerItem.setActionCommand("Benutzer");
 		benutzerItem2.addActionListener(controller);
-		benutzerItem2.setActionCommand("benutzer2");
+		benutzerItem2.setActionCommand("Benutzer2");
 
 
 		menuBar.add(spiel);

@@ -5,11 +5,6 @@ public class Fragenpool {
 	private Frage[] fragen;
 	private int anzahlFragen;
 
-	public Fragenpool() {
-		this.fragen = new Frage[];
-		this.anzahlFragen =0;
-	}
-
 	public void ladeFragenpool(String dateipfad) {
 		try(BufferedReader reader = new BufferedReader(new FileReader(dateipfad))) {
 			String line;
