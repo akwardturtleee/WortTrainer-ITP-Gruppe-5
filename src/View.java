@@ -28,7 +28,7 @@ public class View extends JFrame {
 
 		//JPanel userPanel = new JPanel();
 		//userPanel.add(new JLabel("")); // TEST
-		JPanel userPanel = new Nutzer(controller); // Nutzer-Panel einfügen, mit Chatty umgeschreiben für Testzwecke
+		JPanel userPanel = new Nutzer(controller); // Nutzer-Panel einfügen, mit Chatty umgeschrieben für Testzwecke
 
 		JPanel quizPanel = new JPanel();
 		quizPanel.add(new JLabel("")); // TEST
