@@ -15,10 +15,11 @@ public class Nutzer extends JPanel {
     private Controller controller;
     private JLabel schulbesuchLabel;
     private View view;
+    private JPanel radioPanel;
 
-    public Nutzer(Controller controller) {
+    public Nutzer(Controller controller, View view) {
         this.controller = controller;
-        this.view=view;
+        this.view = view; // View-Instanz wird korrekt initialisiert
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
@@ -58,34 +59,26 @@ public class Nutzer extends JPanel {
         gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
         add(schulbesuchLabel, gbc);
 
-        yesButton= new JRadioButton("Ja");
+        yesButton = new JRadioButton("Ja");
         noButton = new JRadioButton("Nein");
         schulbesuchGroup = new ButtonGroup();
         schulbesuchGroup.add(yesButton);
         schulbesuchGroup.add(noButton);
 
-        JPanel radioPanel = new JPanel();
+        radioPanel = new JPanel();
         radioPanel.add(yesButton);
         radioPanel.add(noButton);
 
         gbc.gridy = 5;
         add(radioPanel, gbc);
 
-        schulbesuchLabel.setVisible(false);
-        radioPanel.setVisible(false);
+        updateSchulbesuchVisibility((String) sprachlevelBox.getSelectedItem());
+
         sprachlevelBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String selectedLevel = (String) sprachlevelBox.getSelectedItem();
-
-                if (selectedLevel.equals("A1") || selectedLevel.equals("A2") || selectedLevel.equals("B1") || selectedLevel.equals("B2")) {
-                    schulbesuchLabel.setVisible(true);
-                    radioPanel.setVisible(true);
-                } else {
-                    schulbesuchLabel.setVisible(false);
-                    radioPanel.setVisible(false);
-                    schulbesuchGroup.clearSelection();
-                }
+                updateSchulbesuchVisibility(selectedLevel);
             }
         });
 
@@ -100,6 +93,18 @@ public class Nutzer extends JPanel {
                 speichernNutzer();
             }
         });
+    }
+
+    private void updateSchulbesuchVisibility(String selectedLevel) {
+        if (selectedLevel.startsWith("A1") || selectedLevel.startsWith("A2")
+                || selectedLevel.startsWith("B1") || selectedLevel.startsWith("B2")) {
+            schulbesuchLabel.setVisible(true);
+            radioPanel.setVisible(true);
+        } else {
+            schulbesuchLabel.setVisible(false);
+            radioPanel.setVisible(false);
+            schulbesuchGroup.clearSelection();
+        }
     }
 
     private void speichernNutzer() {
@@ -130,8 +135,20 @@ public class Nutzer extends JPanel {
 
         JOptionPane.showMessageDialog(this, "Nutzerdaten erfolgreich gespeichert!", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
 
-        view.updateProgress(10);
+        fillProgressBar();
+    }
 
+    private void fillProgressBar() {
+        int counter = 0;
+        while (counter <= 100) {
+            view.updateProgress(counter);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            counter += 10;
+        }
     }
 
     private static boolean isValidEmail(String email) {
@@ -139,4 +156,3 @@ public class Nutzer extends JPanel {
         return Pattern.matches(emailRegex, email);
     }
 }
-
