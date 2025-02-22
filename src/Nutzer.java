@@ -39,14 +39,14 @@ public class Nutzer extends JPanel {
         // Sprachlevel
         gbc.gridx = 0; gbc.gridy = 2;
         add(new JLabel("Sprachlevel:"), gbc);
-        String[] levels = {"A1", "A2", "B1", "B2", "C1", "C2"};
+        String[] levels = {"A1 - Anfänger", "A2-Grundlegende Kenntnisse", "B1-Fortgeschrittene Sprachkenntnisse", "B2-Selbstständige Sprachkenntnisse", "C1-Fachkundige Sprachkenntnisse", "C2-muttersprachliche Kenntnisse"};
         sprachlevelBox = new JComboBox<>(levels);
         gbc.gridx = 1;
         add(sprachlevelBox, gbc);
 
         // E-Mail
         gbc.gridx = 0; gbc.gridy = 3;
-        add(new JLabel("E-Mail:"), gbc);
+        add(new JLabel("E-Mail Adresse:"), gbc);
         emailField = new JTextField(20);
         gbc.gridx = 1;
         add(emailField, gbc);
@@ -75,6 +75,7 @@ public class Nutzer extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String selectedLevel = (String) sprachlevelBox.getSelectedItem();
+
                 if (selectedLevel.equals("A1") || selectedLevel.equals("A2") || selectedLevel.equals("B1") || selectedLevel.equals("B2")) {
                     schulbesuchLabel.setVisible(true);
                     radioPanel.setVisible(true);
@@ -129,7 +130,7 @@ public class Nutzer extends JPanel {
     }
 
     private static boolean isValidEmail(String email) {
-        String emailRegex = "^[\\w-\\.+]+@[\\w-]+\\.[a-z]{2,6}$";
+        String emailRegex = "^[\\w-.+]+@[\\w-]+\\.[a-z]{2,6}$";
         return Pattern.matches(emailRegex, email);
     }
 }
