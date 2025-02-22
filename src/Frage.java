@@ -1,14 +1,12 @@
 package src;
+import java.util.*;
+
 
 public class Frage {
 	private String frageID;
-
 	private String frageTyp;
-
 	private String inhalt;
-
 	private boolean richtig;
-
 	private int punkte;
 
 	public Frage(String inhalt, boolean richtig, String frageTyp) {
@@ -18,6 +16,7 @@ public class Frage {
 	}
 	public void frageHinzufuegen(String inhalt, boolean richtig, String frageTyp) {
 		Frage frage = new Frage(inhalt, richtig, frageTyp);
+
 	}
 	public void frageBearbeiten(String frageID, String neuerInhalt, String neueAntwort) {
 		this.frageID = frageID;
