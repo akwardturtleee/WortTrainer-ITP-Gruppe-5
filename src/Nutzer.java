@@ -88,7 +88,7 @@ public class Nutzer extends JPanel {
 
         // Speichern-Button
         speichernButton = new JButton("Speichern");
-        gbc.gridx = 0; gbc.gridy = 5; gbc.gridwidth = 2;
+        gbc.gridx = 0; gbc.gridy = 9; gbc.gridwidth = 2;
         add(speichernButton, gbc);
 
         speichernButton.addActionListener(new ActionListener() {
