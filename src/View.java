@@ -9,6 +9,8 @@ public class View extends JFrame {
 	private CardLayout cardLayout;
 	private JPanel mainPanel;
 	private Nutzer nutzer;
+	private JProgressBar progressBar;
+
 	public View(Controller controller) {
 		this.controller = controller;
 		frame = new JFrame("Worttrainer");
@@ -106,12 +108,19 @@ public class View extends JFrame {
 		menuPanel.add(menuBar, BorderLayout.CENTER);
 		menuPanel.setPreferredSize(new Dimension(frame.getWidth(), 75));
 
+		progressBar = new JProgressBar(0,100);
+		progressBar.setValue(0);
+		progressBar.setStringPainted(true);
 
 		frame.add(menuPanel, BorderLayout.NORTH);
 		frame.add(mainPanel, BorderLayout.CENTER);
 		frame.setVisible(true);
+		frame.add(progressBar,BorderLayout.SOUTH);
 	}
 		public void showCard(String name) {
 			cardLayout.show(mainPanel, name);
+		}
+		public void updateProgress(int progress) {
+			progressBar.setValue(progress);
 		}
 }

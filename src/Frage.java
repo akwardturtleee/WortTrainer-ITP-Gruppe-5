@@ -13,7 +13,41 @@ public class Frage {
 		this.inhalt = inhalt;
 		this.richtig = richtig;
 		this.frageTyp = frageTyp;
+		this.punkte=0;
 	}
+
+	public String getInhalt() {
+		return inhalt;
+	}
+
+	public boolean isRichtig() {
+		return richtig;
+	}
+
+	public void setRichtig(boolean richtig) {
+		this.richtig = richtig;
+	}
+
+	public int getPunkte() {
+		return punkte;
+	}
+
+	public void setPunkte(int punkte) {
+		this.punkte = punkte;
+	}
+
+	public String getFrageTyp() {
+		return frageTyp;
+	}
+
+	public void setFrageTyp(String frageTyp) {
+		this.frageTyp = frageTyp;
+	}
+
+	public String getFrageID() {
+		return frageID;
+	}
+
 	public void frageHinzufuegen(String inhalt, boolean richtig, String frageTyp) {
 		Frage frage = new Frage(inhalt, richtig, frageTyp);
 

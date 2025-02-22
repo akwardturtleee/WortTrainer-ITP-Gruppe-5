@@ -14,9 +14,11 @@ public class Nutzer extends JPanel {
     private ButtonGroup schulbesuchGroup;
     private Controller controller;
     private JLabel schulbesuchLabel;
+    private View view;
 
     public Nutzer(Controller controller) {
         this.controller = controller;
+        this.view=view;
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
@@ -127,6 +129,9 @@ public class Nutzer extends JPanel {
         }
 
         JOptionPane.showMessageDialog(this, "Nutzerdaten erfolgreich gespeichert!", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
+
+        view.updateProgress(10);
+
     }
 
     private static boolean isValidEmail(String email) {
