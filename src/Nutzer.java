@@ -17,7 +17,7 @@ public class Nutzer extends JPanel {
     private View view;
     private JPanel radioPanel;
 
-    public Nutzer(Controller controller, View view) {
+    public Nutzer(Controller controller) {
         this.controller = controller;
         this.view = view; // View-Instanz wird korrekt initialisiert
         setLayout(new GridBagLayout());
