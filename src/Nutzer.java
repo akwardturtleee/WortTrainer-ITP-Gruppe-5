@@ -9,9 +9,11 @@ import java.util.regex.Pattern;
 public class Nutzer extends JPanel {
     private JTextField nameField, emailField, alterField;
     private JComboBox<String> sprachlevelBox;
-    private JCheckBox schulbesuchBox;
     private JButton speichernButton;
+    private JRadioButton yesButton, noButton;
+    private ButtonGroup schulbesuchGroup;
     private Controller controller;
+    private JLabel schulbesuchLabel;
 
     public Nutzer(Controller controller) {
         this.controller = controller;
@@ -50,9 +52,39 @@ public class Nutzer extends JPanel {
         add(emailField, gbc);
 
         // Schulbesuch
-        schulbesuchBox = new JCheckBox("Ich besuche eine Schule");
+        schulbesuchLabel = new JLabel("Ich besuche eine Schule, wo ich aktiv am Deutschunterricht teilnehme.");
         gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
-        add(schulbesuchBox, gbc);
+        add(schulbesuchLabel, gbc);
+
+        yesButton= new JRadioButton("Ja");
+        noButton = new JRadioButton("Nein");
+        schulbesuchGroup = new ButtonGroup();
+        schulbesuchGroup.add(yesButton);
+        schulbesuchGroup.add(noButton);
+
+        JPanel radioPanel = new JPanel();
+        radioPanel.add(yesButton);
+        radioPanel.add(noButton);
+
+        gbc.gridy = 5;
+        add(radioPanel, gbc);
+
+        schulbesuchLabel.setVisible(false);
+        radioPanel.setVisible(false);
+        sprachlevelBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selectedLevel = (String) sprachlevelBox.getSelectedItem();
+                if (selectedLevel.equals("A1") || selectedLevel.equals("A2") || selectedLevel.equals("B1") || selectedLevel.equals("B2")) {
+                    schulbesuchLabel.setVisible(true);
+                    radioPanel.setVisible(true);
+                } else {
+                    schulbesuchLabel.setVisible(false);
+                    radioPanel.setVisible(false);
+                    schulbesuchGroup.clearSelection();
+                }
+            }
+        });
 
         // Speichern-Button
         speichernButton = new JButton("Speichern");
@@ -72,7 +104,6 @@ public class Nutzer extends JPanel {
         String email = emailField.getText().trim();
         String alterText = alterField.getText().trim();
         String sprachlevel = (String) sprachlevelBox.getSelectedItem();
-        boolean schulbesuch = schulbesuchBox.isSelected();
 
         if (name.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Bitte geben Sie Ihren Namen ein.", "Fehler", JOptionPane.ERROR_MESSAGE);
