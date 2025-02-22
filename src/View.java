@@ -6,50 +6,64 @@ public class View extends JFrame {
 	private Controller controller;
 	private JFrame frame;
 	JMenuItem spielItem;
-	private JPanel mainPanel;
 	private CardLayout cardLayout;
+	private JPanel mainPanel;
+	private Nutzer nutzer;
 	public View(Controller controller) {
 		this.controller = controller;
-		//panel = new JPanel(new BorderLayout(10,10));
-		setTitle("Worttrainer");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(800, 600);
-		setLayout(new BorderLayout(10,10));
-		//panel.setVisible(true);
-		//frame.add(panel);
+		frame = new JFrame("Worttrainer");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(800, 600);
+		frame.setLayout(new BorderLayout(10, 10));
 
-
-
-		CardLayout cardLayout = new CardLayout();
+		cardLayout = new CardLayout();
 		mainPanel = new JPanel(cardLayout);
-		mainPanel.setLayout(new GridLayout(2,1));
-		mainPanel.setBackground(new Color(100, 149, 237));
-		JLabel willkommen = new JLabel("WILLKOMMEN ZUM WORTTRAINER", SwingConstants.CENTER);
-		mainPanel.setFont(new Font("Arial", Font.PLAIN, 50));
-		mainPanel.add(willkommen);
 
-		JPanel userPanel = new JPanel();
-		userPanel.add(new JLabel("Benutzerprofil")); // TEST!!!
+		JPanel homePanel = new JPanel(new GridLayout(2,1));
+		JLabel schriftLabel = new JLabel("WILLKOMMEN BEIM WORTTRAINER!" , SwingConstants.CENTER);
+		homePanel.add(schriftLabel);
+		Font fontW = new Font("Arial", Font.PLAIN, 50);
+		schriftLabel.setFont(fontW);
+		homePanel.setBackground(new Color(100, 149, 237));
 
-		mainPanel.add(userPanel);
+		//JPanel userPanel = new JPanel();
+		//userPanel.add(new JLabel("")); // TEST
+		JPanel userPanel = new Nutzer(controller); // Nutzer-Panel einfügen, mit Chatty umgeschreiben für Testzwecke
+
+		JPanel quizPanel = new JPanel();
+		quizPanel.add(new JLabel("")); // TEST
+
+		JPanel spielPanel = new JPanel();
+		spielPanel.add(new JLabel("")); // TEST
+
+
+		mainPanel.add(homePanel, "home");
+		mainPanel.add(userPanel, "benutzer");
+		mainPanel.add(quizPanel, "quiz");
+		mainPanel.add(spielPanel, "spiel");
 
 		JMenuBar menuBar = new JMenuBar();
-
 		JMenu spiel = new JMenu("Spiel");
-		spiel.setPreferredSize(new Dimension(80,100));
+		spiel.setPreferredSize(new Dimension(80, 100));
 		Font font = new Font("Arial", Font.PLAIN, 20);
 		spiel.setFont(font);
-
 		JMenu benutzer = new JMenu("Benutzer");
-		benutzer.setPreferredSize(new Dimension(100,100));
-
+		benutzer.setPreferredSize(new Dimension(100, 100));
 
 		benutzer.setFont(font);
 		JMenu quiz = new JMenu("Quiz");
-		quiz.setPreferredSize(new Dimension(50,100));
+		quiz.setPreferredSize(new Dimension(50, 100));
 
 		quiz.setFont(font);
 
+		JMenu haus = new JMenu("Home");
+		haus.setPreferredSize(new Dimension(70, 100));
+		haus.setFont(font);
+		JMenuItem hausItem = new JMenuItem("Home");
+		hausItem.setMnemonic('H');
+		hausItem.addActionListener(controller);
+		hausItem.setActionCommand("home");
+		haus.add(hausItem);
 		spielItem = new JMenuItem("Starten");
 		spielItem.setMnemonic('S');
 		JMenuItem spielItem2 = new JMenuItem("Beenden");
@@ -72,9 +86,8 @@ public class View extends JFrame {
 		quizItem2.addActionListener(controller);
 		quizItem2.setActionCommand("quiz2");
 
-		JMenuItem benutzerItem = new JMenuItem("Nutzerprofil");
-		benutzerItem.setMnemonic('N');
-
+		JMenuItem benutzerItem = new JMenuItem("Profil");
+		benutzerItem.setMnemonic('P');
 		JMenuItem benutzerItem2 = new JMenuItem("Fortschritt");
 		benutzerItem2.setMnemonic('F');
 		benutzer.add(benutzerItem);
@@ -88,12 +101,17 @@ public class View extends JFrame {
 		menuBar.add(spiel);
 		menuBar.add(benutzer);
 		menuBar.add(quiz);
-
+		menuBar.add(haus);
 		JPanel menuPanel = new JPanel(new BorderLayout());
 		menuPanel.add(menuBar, BorderLayout.CENTER);
-		menuPanel.setPreferredSize(new Dimension(getWidth(), 75));
+		menuPanel.setPreferredSize(new Dimension(frame.getWidth(), 75));
 
-		add(menuPanel, BorderLayout.NORTH);
-		add(mainPanel, BorderLayout.CENTER);
+
+		frame.add(menuPanel, BorderLayout.NORTH);
+		frame.add(mainPanel, BorderLayout.CENTER);
+		frame.setVisible(true);
 	}
+		public void showCard(String name) {
+			cardLayout.show(mainPanel, name);
+		}
 }

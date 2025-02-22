@@ -9,6 +9,7 @@ public class Controller implements ActionListener {
 	private SpielModus spielModus;
 	private QuizModus quizModus;
 	private Fragenpool fragenpool;
+	private Nutzer nutzer;
 	public Controller() {
         this.view = new View(this);
     }
@@ -16,27 +17,27 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 			switch (e.getActionCommand()) {
 				case "spiel":
-					spielModus = new SpielModus();
+					view.showCard("spiel");
 					break;
-				case "spiel2":
-					if (spielModus != null) {
-						spielModus.spielBeenden();
-					}
+				case "spiel2", "quiz2","home":
+					view.showCard("home");
 					break;
 				case "quiz":
-					quizModus = new QuizModus(fragenpool);
+					view.showCard("quiz");
 					break;
-				case "quiz2":
-					if (quizModus != null) {
-						quizModus.beendeQuiz();
+                case "benutzer":
+					if (nutzer == null) { // Falls noch kein Nutzer existiert, erstelle ihn
+						view.showCard("benutzer");
+					} else {
+						view.showCard("home");
 					}
-					break;
-				case "benutzer":
-					break;
-				case "benutzer2":
+					view.showCard("benutzer");
 
 					break;
-			}
+				case "benutzer2":
+					view.showCard("benutzer2");
+					break;
+            }
 
 	}
 	public static void main(String[] args) {

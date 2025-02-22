@@ -1,81 +1,105 @@
 package src;
+
 import javax.swing.*;
-import javax.swing.JOptionPane;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.regex.Pattern;
 
+public class Nutzer extends JPanel {
+    private JTextField nameField, emailField, alterField;
+    private JComboBox<String> sprachlevelBox;
+    private JCheckBox schulbesuchBox;
+    private JButton speichernButton;
+    private Controller controller;
 
-public class Nutzer extends JFrame {
-    private String name;
-    private int alter;
-    private String sprachlevel;
-    private String email;
-    private boolean schulbesuch;
-    private String[] levelOptionen;
+    public Nutzer(Controller controller) {
+        this.controller = controller;
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
+        // Name
+        gbc.gridx = 0; gbc.gridy = 0;
+        add(new JLabel("Name:"), gbc);
+        nameField = new JTextField(15);
+        gbc.gridx = 1;
+        add(nameField, gbc);
 
-    public Nutzer() {
-        // Name abfragen
-        name = JOptionPane.showInputDialog("Bitte geben Sie hier Ihren Namen ein:");
-        if (name == null || name.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Bitte Name eingeben, es darf nicht leer sein!");
-            return;
-        }
-        JOptionPane.showMessageDialog(null, "Willkommen " + name + "!");
+        // Alter
+        gbc.gridx = 0; gbc.gridy = 1;
+        add(new JLabel("Alter:"), gbc);
+        alterField = new JTextField(5);
+        gbc.gridx = 1;
+        add(alterField, gbc);
 
-        // Alter abfragen
-        String alterEingabe = JOptionPane.showInputDialog("Bitte geben Sie hier Ihr Alter an:");
-        if (alterEingabe == null || alterEingabe.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Bitte geben Sie ein Alter an!");
-            return;
-        }
-        try {
-            alter = Integer.parseInt(alterEingabe);
-            if (alter <= 0) {
-                JOptionPane.showMessageDialog(null, "Bitte geben Sie ein gültiges Alter ein! :");
-                return;
-            }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Bitte geben Sie eine gültige Zahl ein! :");
-            return;
-        }
-        JOptionPane.showMessageDialog(null, "Sie sind " + alter + " Jahre alt."); // Alter korrekt anzeigen
+        // Sprachlevel
+        gbc.gridx = 0; gbc.gridy = 2;
+        add(new JLabel("Sprachlevel:"), gbc);
+        String[] levels = {"A1", "A2", "B1", "B2", "C1", "C2"};
+        sprachlevelBox = new JComboBox<>(levels);
+        gbc.gridx = 1;
+        add(sprachlevelBox, gbc);
 
-        // Sprachlevel abfragen
-        String sprachlevelEingabe = JOptionPane.showInputDialog("Bitte geben Sie Ihr jetziges Sprachlevel an (A1 - C2):");
-        if (sprachlevelEingabe == null || sprachlevelEingabe.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Bitte geben Sie ein Sprachlevel an! :");
-            return;
-        }
-        sprachlevelEingabe = sprachlevelEingabe.trim().toUpperCase();
-
-        if (sprachlevelEingabe.equals("A1") || sprachlevelEingabe.equals("A2") || sprachlevelEingabe.equals("B1") || sprachlevelEingabe.equals("B2") || sprachlevelEingabe.equals("C1") || sprachlevelEingabe.equals("C2")) {
-            sprachlevel = sprachlevelEingabe; // gültig
-        } else {
-            JOptionPane.showMessageDialog(null, "Bitte geben Sie ein gültiges Sprachlevel an:\nA1\nA2\nB1\nB2\nC1\nC2");
-            return;
-        }
         // E-Mail
-        String email = JOptionPane.showInputDialog("Bitte geben Sie Ihre E-Mail-Adresse ein! :");
-        if (email == null || !isValidEmail(email)) {
-            JOptionPane.showMessageDialog(null, "Bitte geben Sie eine gültige E-Mail-Adresse ein.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Die E-Mail-Adresse ist gültig.");
+        gbc.gridx = 0; gbc.gridy = 3;
+        add(new JLabel("E-Mail:"), gbc);
+        emailField = new JTextField(20);
+        gbc.gridx = 1;
+        add(emailField, gbc);
+
+        // Schulbesuch
+        schulbesuchBox = new JCheckBox("Ich besuche eine Schule");
+        gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
+        add(schulbesuchBox, gbc);
+
+        // Speichern-Button
+        speichernButton = new JButton("Speichern");
+        gbc.gridx = 0; gbc.gridy = 5; gbc.gridwidth = 2;
+        add(speichernButton, gbc);
+
+        speichernButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                speichernNutzer();
+            }
+        });
+    }
+
+    private void speichernNutzer() {
+        String name = nameField.getText().trim();
+        String email = emailField.getText().trim();
+        String alterText = alterField.getText().trim();
+        String sprachlevel = (String) sprachlevelBox.getSelectedItem();
+        boolean schulbesuch = schulbesuchBox.isSelected();
+
+        if (name.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bitte geben Sie Ihren Namen ein.", "Fehler", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-        // Schulbesuch bei A1-B1 abfragen
-        if (sprachlevel.equals("A1") || sprachlevel.equals("A2") || sprachlevel.equals("B1")) {
-            int schulAntwort = JOptionPane.showConfirmDialog(
-                    null,
-                    "Gehen Sie noch zur Schule, um Ihre Deutschkenntnisse zu verbessern?",
-                    "Schulbesuch",
-                    JOptionPane.YES_NO_OPTION
-            );
-            schulbesuch = (schulAntwort == JOptionPane.YES_OPTION);
+        try {
+            int alter = Integer.parseInt(alterText);
+            if (alter <= 0) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Bitte geben Sie ein gültiges Alter ein.", "Fehler", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+
+        if (!isValidEmail(email)) {
+            JOptionPane.showMessageDialog(this, "Bitte geben Sie eine gültige E-Mail-Adresse ein.", "Fehler", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        JOptionPane.showMessageDialog(this, "Nutzerdaten erfolgreich gespeichert!", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
     }
-    // E-Mail-Validierung
-    private static boolean isValidEmail (String email) {
-        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+
+    private static boolean isValidEmail(String email) {
+        String emailRegex = "^[\\w-\\.+]+@[\\w-]+\\.[a-z]{2,6}$";
         return Pattern.matches(emailRegex, email);
     }
 }
+
