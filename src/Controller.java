@@ -17,7 +17,11 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 			switch (e.getActionCommand()) {
 				case "spiel":
-					view.showCard("spiel");
+					if (spielModus == null) {
+						view.showCard("spiel");
+					} else {
+						view.showCard("home");
+					}
 					break;
 				case "spiel2", "quiz2","home":
 					view.showCard("home");
@@ -26,7 +30,7 @@ public class Controller implements ActionListener {
 					view.showCard("quiz");
 					break;
                 case "benutzer":
-					if (nutzer == null) { // Falls noch kein Nutzer existiert, erstelle ihn
+					if (nutzer == null) {
 						view.showCard("benutzer");
 					} else {
 						view.showCard("home");

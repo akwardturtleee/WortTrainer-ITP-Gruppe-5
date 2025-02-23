@@ -9,6 +9,7 @@ public class View extends JFrame {
 	private CardLayout cardLayout;
 	private JPanel mainPanel;
 	private Nutzer nutzer;
+	private SpielModus spielModus;
 	private JProgressBar progressBar;
 
 	public View(Controller controller) {
@@ -31,12 +32,12 @@ public class View extends JFrame {
 		//JPanel userPanel = new JPanel();
 		//userPanel.add(new JLabel("")); // TEST
 		JPanel userPanel = new Nutzer(controller); // Nutzer-Panel einfügen, mit Chatty umgeschrieben für Testzwecke
-
+		userPanel.setBackground(new Color(100, 149, 237));
 		JPanel quizPanel = new JPanel();
 		quizPanel.add(new JLabel("")); // TEST
 
-		JPanel spielPanel = new JPanel();
-		spielPanel.add(new JLabel("")); // TEST
+		JPanel spielPanel = new SpielModus(controller);
+		//spielPanel.add(new JLabel("")); // TEST
 
 
 		mainPanel.add(homePanel, "home");
