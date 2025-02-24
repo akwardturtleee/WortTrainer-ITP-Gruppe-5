@@ -27,7 +27,11 @@ public class Controller implements ActionListener {
 					view.showCard("home");
 					break;
 				case "quiz":
-					view.showCard("quiz");
+					if (quizModus == null) {
+						view.showCard("quiz");
+					} else {
+						view.showCard("home");
+					}
 					break;
                 case "benutzer":
 					if (nutzer == null) {

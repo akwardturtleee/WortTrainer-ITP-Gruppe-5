@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fragenpool {
-    private List <Frage> fragen;
+    private List<Frage> fragen;
 
     public Fragenpool() {
         fragen = new ArrayList<>();
-        ladeFragenAusDatei("textfile.txt");
+        ladeFragenAusDatei("src/textfile.txt");
     }
 
     private void ladeFragenAusDatei(String dateiname) {
@@ -23,7 +23,8 @@ public class Fragenpool {
                     currentLevel = line.substring(0, line.length() - 1).trim();
                 } else if (line.startsWith("- Frage:")) {
                     String frageText = line.substring(9).trim();
-                    fragen.add(new Frage(frageText, false, currentLevel));
+                    String antwortText = br.readLine().substring(10).trim(); // Read the next line for the answer
+                    fragen.add(new Frage(frageText, antwortText, currentLevel));
                 }
             }
         } catch (FileNotFoundException e) {
@@ -37,23 +38,5 @@ public class Fragenpool {
 
     public List<Frage> getFragen() {
         return fragen;
-    }
-
-    public void frageHinzufuegen(String inhalt, boolean richtig, String frageTyp) {
-        fragen.add(new Frage(inhalt, richtig, frageTyp));
-    }
-
-    public void frageBearbeiten(String frageID, String neuerInhalt, String neueAntwort) {
-        for (Frage frage : fragen) {
-            if (frage.getFrageID().equals(frageID)) {
-                frage.frageBearbeiten(frageID, neuerInhalt, neueAntwort);
-                return;
-            }
-        }
-        System.err.println("Fehler: Frage mit ID " + frageID + " nicht gefunden.");
-    }
-
-    public void frageLoeschen(String frageID) {
-        fragen.removeIf(frage -> frage.getFrageID().equals(frageID));
     }
 }

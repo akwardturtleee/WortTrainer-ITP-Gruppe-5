@@ -1,15 +1,13 @@
 package src;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class View extends JFrame {
 	private Controller controller;
 	private JFrame frame;
-	JMenuItem spielItem;
 	private CardLayout cardLayout;
 	private JPanel mainPanel;
-	private Nutzer nutzer;
-	private SpielModus spielModus;
 	private JProgressBar progressBar;
 
 	public View(Controller controller) {
@@ -22,23 +20,17 @@ public class View extends JFrame {
 		cardLayout = new CardLayout();
 		mainPanel = new JPanel(cardLayout);
 
-		JPanel homePanel = new JPanel(new GridLayout(2,1));
-		JLabel schriftLabel = new JLabel("WILLKOMMEN BEIM WORTTRAINER!" , SwingConstants.CENTER);
+		JPanel homePanel = new JPanel(new GridLayout(2, 1));
+		JLabel schriftLabel = new JLabel("WILLKOMMEN BEIM WORTTRAINER!", SwingConstants.CENTER);
 		homePanel.add(schriftLabel);
 		Font fontW = new Font("Arial", Font.PLAIN, 50);
 		schriftLabel.setFont(fontW);
 		homePanel.setBackground(new Color(100, 149, 237));
 
-		//JPanel userPanel = new JPanel();
-		//userPanel.add(new JLabel("")); // TEST
-		JPanel userPanel = new Nutzer(controller); // Nutzer-Panel einfügen, mit Chatty umgeschrieben für Testzwecke
+		JPanel userPanel = new Nutzer(controller);
 		userPanel.setBackground(new Color(100, 149, 237));
-		JPanel quizPanel = new JPanel();
-		quizPanel.add(new JLabel("")); // TEST
-
+		JPanel quizPanel = new QuizModus(controller, new Fragenpool());
 		JPanel spielPanel = new SpielModus(controller);
-		//spielPanel.add(new JLabel("")); // TEST
-
 
 		mainPanel.add(homePanel, "home");
 		mainPanel.add(userPanel, "benutzer");
@@ -52,22 +44,21 @@ public class View extends JFrame {
 		spiel.setFont(font);
 		JMenu benutzer = new JMenu("Benutzer");
 		benutzer.setPreferredSize(new Dimension(100, 100));
-
 		benutzer.setFont(font);
 		JMenu quiz = new JMenu("Quiz");
 		quiz.setPreferredSize(new Dimension(50, 100));
-
 		quiz.setFont(font);
-
 		JMenu haus = new JMenu("Home");
 		haus.setPreferredSize(new Dimension(70, 100));
 		haus.setFont(font);
+
 		JMenuItem hausItem = new JMenuItem("Home");
 		hausItem.setMnemonic('H');
 		hausItem.addActionListener(controller);
 		hausItem.setActionCommand("home");
 		haus.add(hausItem);
-		spielItem = new JMenuItem("Starten");
+
+		JMenuItem spielItem = new JMenuItem("Starten");
 		spielItem.setMnemonic('S');
 		JMenuItem spielItem2 = new JMenuItem("Beenden");
 		spielItem2.setMnemonic('B');
@@ -100,28 +91,30 @@ public class View extends JFrame {
 		benutzerItem2.addActionListener(controller);
 		benutzerItem2.setActionCommand("benutzer2");
 
-
 		menuBar.add(spiel);
 		menuBar.add(benutzer);
 		menuBar.add(quiz);
 		menuBar.add(haus);
+
 		JPanel menuPanel = new JPanel(new BorderLayout());
 		menuPanel.add(menuBar, BorderLayout.CENTER);
 		menuPanel.setPreferredSize(new Dimension(frame.getWidth(), 75));
 
-		progressBar = new JProgressBar(0,100);
+		progressBar = new JProgressBar(0, 100);
 		progressBar.setValue(0);
 		progressBar.setStringPainted(true);
 
 		frame.add(menuPanel, BorderLayout.NORTH);
 		frame.add(mainPanel, BorderLayout.CENTER);
 		frame.setVisible(true);
-		frame.add(progressBar,BorderLayout.SOUTH);
+		frame.add(progressBar, BorderLayout.SOUTH);
 	}
-		public void showCard(String name) {
-			cardLayout.show(mainPanel, name);
-		}
-		public void updateProgress(int progress) {
-			progressBar.setValue(progress);
-		}
+
+	public void showCard(String name) {
+		cardLayout.show(mainPanel, name);
+	}
+
+	public void updateProgress(int progress) {
+		progressBar.setValue(progress);
+	}
 }

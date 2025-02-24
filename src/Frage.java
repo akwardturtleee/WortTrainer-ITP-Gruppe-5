@@ -1,31 +1,30 @@
 package src;
 import java.util.*;
 
-
 public class Frage {
 	private String frageID;
 	private String frageTyp;
 	private String inhalt;
-	private boolean richtig;
+	private String richtigeAntwort; // New field for the correct answer
 	private int punkte;
 
-	public Frage(String inhalt, boolean richtig, String frageTyp) {
+	public Frage(String inhalt, String richtigeAntwort, String frageTyp) {
 		this.inhalt = inhalt;
-		this.richtig = richtig;
+		this.richtigeAntwort = richtigeAntwort;
 		this.frageTyp = frageTyp;
-		this.punkte=0;
+		this.punkte = 0;
 	}
 
 	public String getInhalt() {
 		return inhalt;
 	}
 
-	public boolean isRichtig() {
-		return richtig;
+	public String getRichtigeAntwort() {
+		return richtigeAntwort;
 	}
 
-	public void setRichtig(boolean richtig) {
-		this.richtig = richtig;
+	public void setRichtigeAntwort(String richtigeAntwort) {
+		this.richtigeAntwort = richtigeAntwort;
 	}
 
 	public int getPunkte() {
@@ -46,18 +45,5 @@ public class Frage {
 
 	public String getFrageID() {
 		return frageID;
-	}
-
-	public void frageHinzufuegen(String inhalt, boolean richtig, String frageTyp) {
-		Frage frage = new Frage(inhalt, richtig, frageTyp);
-
-	}
-	public void frageBearbeiten(String frageID, String neuerInhalt, String neueAntwort) {
-		this.frageID = frageID;
-		this.inhalt = neuerInhalt;
-		this.richtig = false;
-	}
-	public void frageLoeschen(String frageID) {
-
 	}
 }
