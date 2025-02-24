@@ -1,4 +1,3 @@
-//File: src/QuizModus.java
 package src;
 
 import javax.swing.*;
@@ -19,67 +18,63 @@ public class QuizModus extends JPanel implements ActionListener {
 	private JButton bestaetigenButton;
 	private JLabel feedbackLabel;
 	private JLabel imageLabel;
+	private JProgressBar progressBar; // Fortschrittsbalken
 	private Controller controller;
 
 	public QuizModus(Controller controller, Fragenpool fragenpool, String selectedLevel) {
 		this.controller = controller;
-		// Filter questions using a basic loop.
-		int total = 0;
-		for (int i = 0; i < fragenpool.getFragen().size(); i++) {
-			Frage f = fragenpool.getFragen().get(i);
-			if (f.getFrageTyp().equalsIgnoreCase(selectedLevel)) {
-				total++;
-			}
-		}
-		Frage[] filtered = new Frage[total];
-		int index = 0;
-		for (int i = 0; i < fragenpool.getFragen().size(); i++) {
-			Frage f = fragenpool.getFragen().get(i);
-			if (f.getFrageTyp().equalsIgnoreCase(selectedLevel)) {
-				filtered[index++] = f;
-			}
-		}
-		for (int i = filtered.length - 1; i > 0; i--) {
-			int j = (int) (Math.random() * (i + 1));
-			Frage temp = filtered[i];
-			filtered[i] = filtered[j];
-			filtered[j] = temp;
-		}
-		this.fragen = filtered;
+		this.fragen = fragenpool.getFragen().stream()
+				.filter(f -> f.getFrageTyp().equalsIgnoreCase(selectedLevel))
+				.toArray(Frage[]::new);
+		shuffleArray(fragen);
 		this.aktuelleFrageIndex = 0;
 		this.punkte = 0;
 		this.richtigeAntworten = 0;
 		this.falscheAntworten = 0;
 		this.quizBeendet = false;
 
-		setLayout(new BorderLayout());
+		setLayout(new BorderLayout(20, 20));
+		setBackground(Color.WHITE);
+
 		frageLabel = new JLabel("", SwingConstants.CENTER);
-		frageLabel.setFont(new Font("Arial Unicode MS", Font.BOLD, 20));
+		frageLabel.setFont(new Font("Verdana", Font.BOLD, 22));
+		frageLabel.setForeground(new Color(50, 50, 150));
 
 		antwortFeld = new JTextField(20);
-		antwortFeld.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
-		// Allow Enter key to trigger answer confirmation.
+		antwortFeld.setFont(new Font("Verdana", Font.PLAIN, 18));
 		antwortFeld.addActionListener(this);
 
-		bestaetigenButton = new JButton("Antwort bestätigen");
-		bestaetigenButton.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
+		bestaetigenButton = new JButton("Bestätigen");
+		bestaetigenButton.setFont(new Font("Verdana", Font.BOLD, 16));
+		bestaetigenButton.setBackground(new Color(100, 150, 250));
+		bestaetigenButton.setForeground(Color.WHITE);
+		bestaetigenButton.setFocusPainted(false);
 		bestaetigenButton.addActionListener(this);
 
 		feedbackLabel = new JLabel("", SwingConstants.CENTER);
-		feedbackLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
+		feedbackLabel.setFont(new Font("Verdana", Font.ITALIC, 18));
+		feedbackLabel.setForeground(Color.DARK_GRAY);
 
 		imageLabel = new JLabel("", SwingConstants.CENTER);
 
+		// Fortschrittsbalken initialisieren
+		progressBar = new JProgressBar(0, fragen.length);
+		progressBar.setValue(0);
+		progressBar.setStringPainted(true);
+		progressBar.setFont(new Font("Verdana", Font.BOLD, 14));
+		progressBar.setForeground(new Color(0, 150, 0)); // Grün für Fortschritt
+
 		JPanel inputPanel = new JPanel();
+		inputPanel.setLayout(new FlowLayout());
 		inputPanel.add(antwortFeld);
 		inputPanel.add(bestaetigenButton);
 
 		JPanel bottomPanel = new JPanel(new BorderLayout());
-		bottomPanel.add(feedbackLabel, BorderLayout.NORTH);
+		bottomPanel.add(progressBar, BorderLayout.NORTH); // Fortschrittsbalken hinzufügen
+		bottomPanel.add(feedbackLabel, BorderLayout.CENTER);
 		bottomPanel.add(inputPanel, BorderLayout.SOUTH);
 
-		add(frageLabel, BorderLayout.NORTH);
-		add(imageLabel, BorderLayout.CENTER);
+		add(frageLabel, BorderLayout.CENTER);
 		add(bottomPanel, BorderLayout.SOUTH);
 
 		naechsteFrage();
@@ -88,10 +83,11 @@ public class QuizModus extends JPanel implements ActionListener {
 	private void naechsteFrage() {
 		if (aktuelleFrageIndex < fragen.length) {
 			Frage aktuelleFrage = fragen[aktuelleFrageIndex];
-			frageLabel.setText(aktuelleFrage.getInhalt());
+			frageLabel.setText("Frage " + (aktuelleFrageIndex + 1) + ": " + aktuelleFrage.getInhalt());
+
 			if (aktuelleFrage.getImagePath() != null) {
 				ImageIcon icon = new ImageIcon(aktuelleFrage.getImagePath());
-				Image scaledImage = icon.getImage().getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+				Image scaledImage = icon.getImage().getScaledInstance(350, 250, Image.SCALE_SMOOTH);
 				imageLabel.setIcon(new ImageIcon(scaledImage));
 			} else {
 				imageLabel.setIcon(null);
@@ -124,17 +120,51 @@ public class QuizModus extends JPanel implements ActionListener {
 		if (aktuelleFrageIndex < fragen.length) {
 			Frage aktuelleFrage = fragen[aktuelleFrageIndex];
 			String eingabe = antwortFeld.getText().trim();
+
 			if (pruefeAntwort(eingabe, aktuelleFrage)) {
 				feedbackLabel.setText("Richtig!");
+				feedbackLabel.setForeground(new Color(0, 128, 0));
 				richtigeAntworten++;
 				punkte += 10;
+				updateProgressBar(); // Fortschritt erhöhen
 			} else {
-				feedbackLabel.setText("Falsch!");
+				feedbackLabel.setText("Falsch! Die richtige Antwort war: " + aktuelleFrage.getRichtigeAntwort());
+				feedbackLabel.setForeground(Color.RED);
 				falscheAntworten++;
 			}
+
 			aktuelleFrageIndex++;
 			antwortFeld.setText("");
 			naechsteFrage();
+		}
+	}
+
+	private void updateProgressBar() {
+		SwingWorker<Void, Integer> worker = new SwingWorker<>() {
+			@Override
+			protected Void doInBackground() throws Exception {
+				int currentProgress = progressBar.getValue();
+				int newProgress = currentProgress + 1; // Erhöhe Fortschritt um 1
+				publish(newProgress);
+				return null;
+			}
+
+			@Override
+			protected void process(java.util.List<Integer> chunks) {
+				for (int value : chunks) {
+					progressBar.setValue(value);
+				}
+			}
+		};
+		worker.execute();
+	}
+
+	private void shuffleArray(Frage[] array) {
+		for (int i = array.length - 1; i > 0; i--) {
+			int j = (int) (Math.random() * (i + 1));
+			Frage temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
 		}
 	}
 }

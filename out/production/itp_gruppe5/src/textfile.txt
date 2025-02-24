@@ -1,191 +1,47 @@
 A1:
-- Frage: Wie schreibt man das Wort "Haus" (siehe Bild)? -> Haus
-- Frage: Errate das Wort: Ein Tier, das bellt (siehe Bild)? -> Hund
-- Frage: Wie schreibt man das Wort "Auto" (siehe Bild)? -> Auto
-- Frage: Errate das Wort: Ein Tier, das miaut (siehe Bild)? -> Katze
-- Frage: Wie schreibt man das Wort "Baum" (siehe Bild)? -> Baum
-- Frage: Errate das Wort: Ein Ort, wo man lernt (siehe Bild)? -> Schule
-- Frage: Wie schreibt man das Wort "Stuhl" (siehe Bild)? -> Stuhl
-- Frage: Errate das Wort: Ein Möbelstück, auf dem man sitzt (siehe Bild)? -> Stuhl
-- Frage: Wie schreibt man das Wort "Tisch" (siehe Bild)? -> Tisch
-- Frage: Errate das Wort: Ein Möbelstück, auf dem man schreibt (siehe Bild)? -> Tisch
-- Frage: Wie schreibt man das Wort "Blume" (siehe Bild)? -> Blume
-- Frage: Errate das Wort: Eine Pflanze, die blüht (siehe Bild)? -> Blume
-- Frage: Wie schreibt man das Wort "Buch" (siehe Bild)? -> Buch
-- Frage: Errate das Wort: Ein Gegenstand, den man liest (siehe Bild)? -> Buch
-- Frage: Wie schreibt man das Wort "Hund" (siehe Bild)? -> Hund
-- Frage: Errate das Wort: Ein Tier, das bellt (siehe Bild)? -> Hund
-- Frage: Wie schreibt man das Wort "Katze" (siehe Bild)? -> Katze
-- Frage: Errate das Wort: Ein Tier, das miaut (siehe Bild)? -> Katze
-- Frage: Wie schreibt man das Wort "Schule" (siehe Bild)? -> Schule
-- Frage: Errate das Wort: Ein Ort, wo man lernt (siehe Bild)? -> Schule
-- Frage: Wie schreibt man das Wort "Fenster" (siehe Bild)? -> Fenster
-- Frage: Errate das Wort: Ein Gegenstand, der Fenster schließt (siehe Bild)? -> Fenster
-- Frage: Wie schreibt man das Wort "Tür" (siehe Bild)? -> Tür
-- Frage: Errate das Wort: Ein Gegenstand, der Türen schließt (siehe Bild)? -> Tür
-- Frage: Wie schreibt man das Wort "Lampe" (siehe Bild)? -> Lampe
-- Frage: Errate das Wort: Ein Gegenstand, der Licht gibt (siehe Bild)? -> Lampe
-- Frage: Wie schreibt man das Wort "Teppich" (siehe Bild)? -> Teppich
-- Frage: Errate das Wort: Ein Gegenstand, der auf dem Boden liegt (siehe Bild)? -> Teppich
-- Frage: Wie schreibt man das Wort "Bett" (siehe Bild)? -> Bett
-- Frage: Errate das Wort: Ein Möbelstück, auf dem man schläft (siehe Bild)? -> Bett
+- Frage: Beschreibe, wofür man ein „Auto“ benutzt.
+- Frage: Errate das Wort: Ein Tier, das miaut.
+- Frage: Nenne drei verschiedene Arten von „Blumen“.
+- Frage: Errate das Wort: Ein Möbelstück, auf dem man sitzt.
+- Frage: Erkläre, warum ein „Fenster“ wichtig ist.
+- Frage: Errate das Wort: Ein Gegenstand, der Fenster schließt.
 
 A2:
-- Frage: Erkläre den Begriff "Photosynthese".
-- Frage: Wie schreibt man das Wort "Kühlschrank" (siehe Bild)? -> Kühlschrank
-- Frage: Errate das Wort: Ein Gerät, das kühlt (siehe Bild)? -> Kühlschrank
-- Frage: Erkläre den Begriff "Energie".
-- Frage: Wie schreibt man das Wort "Fernseher" (siehe Bild)? -> Fernseher
-- Frage: Errate das Wort: Ein Gerät, das Filme zeigt (siehe Bild)? -> Fernseher
-- Frage: Erkläre den Begriff "Gravitation".
-- Frage: Wie schreibt man das Wort "Computer" (siehe Bild)? -> Computer
-- Frage: Errate das Wort: Ein Gerät, das man zum Arbeiten benutzt (siehe Bild)? -> Computer
-- Frage: Erkläre den Begriff "Evolution".
-- Frage: Wie schreibt man das Wort "Telefon" (siehe Bild)? -> Telefon
-- Frage: Errate das Wort: Ein Gerät, das man zum Telefonieren benutzt (siehe Bild)? -> Telefon
-- Frage: Erkläre den Begriff "Klimawandel".
-- Frage: Wie schreibt man das Wort "Uhr" (siehe Bild)? -> Uhr
-- Frage: Errate das Wort: Ein Gerät, das die Zeit anzeigt (siehe Bild)? -> Uhr
-- Frage: Erkläre den Begriff "Nachhaltigkeit".
-- Frage: Wie schreibt man das Wort "Bild" (siehe Bild)? -> Bild
-- Frage: Errate das Wort: Ein Gegenstand, der Bilder zeigt (siehe Bild)? -> Bild
-- Frage: Erkläre den Begriff "Globalisierung".
-- Frage: Wie schreibt man das Wort "Stift" (siehe Bild)? -> Stift
-- Frage: Errate das Wort: Ein Gegenstand, den man zum Schreiben benutzt (siehe Bild)? -> Stift
-- Frage: Erkläre den Begriff "Demokratie".
-- Frage: Wie schreibt man das Wort "Papier" (siehe Bild)? -> Papier
-- Frage: Errate das Wort: Ein Material, auf dem man schreibt (siehe Bild)? -> Papier
-- Frage: Erkläre den Begriff "Menschenrechte".
-- Frage: Wie schreibt man das Wort "Tasche" (siehe Bild)? -> Tasche
-- Frage: Errate das Wort: Ein Gegenstand, den man trägt, um Dinge zu transportieren (siehe Bild)? -> Tasche
-- Frage: Erkläre den Begriff "Umweltschutz".
-- Frage: Wie schreibt man das Wort "Schuh" (siehe Bild)? -> Schuh
-- Frage: Errate das Wort: Ein Kleidungsstück, das man an den Füßen trägt (siehe Bild)? -> Schuh
+- Frage: Erkläre den Begriff „Energie“ in einfachen Worten.
+- Frage: Beschreibe, wofür man einen „Kühlschrank“ braucht.
+- Frage: Errate das Wort: Ein Gerät, das kühlt.
+- Frage: Erkläre den Begriff „Photosynthese“ in einem Satz.
+- Frage: Nenne drei Funktionen eines „Telefons“.
+- Frage: Errate das Wort: Ein Gerät, das man zum Telefonieren benutzt.
 
 B1:
-- Frage: Diskutiere die Bedeutung von "Nachhaltigkeit".
-- Frage: Wie schreibt man das Wort "Jacke" (siehe Bild)? -> Jacke
-- Frage: Errate das Wort: Ein Kleidungsstück, das man im Winter trägt (siehe Bild)? -> Jacke
-- Frage: Diskutiere die Bedeutung von "Klimawandel".
-- Frage: Wie schreibt man das Wort "Hut" (siehe Bild)? -> Hut
-- Frage: Errate das Wort: Ein Accessoire, das man auf dem Kopf trägt (siehe Bild)? -> Hut
-- Frage: Diskutiere die Bedeutung von "Globalisierung".
-- Frage: Wie schreibt man das Wort "Brille" (siehe Bild)? -> Brille
-- Frage: Errate das Wort: Ein Accessoire, das man vor den Augen trägt (siehe Bild)? -> Brille
-- Frage: Diskutiere die Bedeutung von "Demokratie".
-- Frage: Wie schreibt man das Wort "Schlüssel" (siehe Bild)? -> Schlüssel
-- Frage: Errate das Wort: Ein Gegenstand, mit dem man Türen öffnet (siehe Bild)? -> Schlüssel
-- Frage: Diskutiere die Bedeutung von "Menschenrechte".
-- Frage: Wie schreibt man das Wort "Geld" (siehe Bild)? -> Geld
-- Frage: Errate das Wort: Ein Zahlungsmittel (siehe Bild)? -> Geld
-- Frage: Diskutiere die Bedeutung von "Umweltschutz".
-- Frage: Wie schreibt man das Wort "Lampe" (siehe Bild)? -> Lampe
-- Frage: Errate das Wort: Ein Gegenstand, der Licht gibt (siehe Bild)? -> Lampe
-- Frage: Diskutiere die Bedeutung von "Biodiversität".
-- Frage: Wie schreibt man das Wort "Teppich" (siehe Bild)? -> Teppich
-- Frage: Errate das Wort: Ein Gegenstand, der auf dem Boden liegt (siehe Bild)? -> Teppich
-- Frage: Diskutiere die Bedeutung von "Erneuerbare Energie".
-- Frage: Wie schreibt man das Wort "Bett" (siehe Bild)? -> Bett
-- Frage: Errate das Wort: Ein Möbelstück, auf dem man schläft (siehe Bild)? -> Bett
-- Frage: Diskutiere die Bedeutung von "Künstliche Intelligenz".
-- Frage: Wie schreibt man das Wort "Bild" (siehe Bild)? -> Bild
-- Frage: Errate das Wort: Ein Gegenstand, der Bilder zeigt (siehe Bild)? -> Bild
-- Frage: Diskutiere die Bedeutung von "Blockchain".
-- Frage: Wie schreibt man das Wort "Stift" (siehe Bild)? -> Stift
-- Frage: Errate das Wort: Ein Gegenstand, den man zum Schreiben benutzt (siehe Bild)? -> Stift
+- Frage: Diskutiere, warum „Nachhaltigkeit“ für Unternehmen wichtig ist.
+- Frage: Beschreibe, wann man eine „Jacke“ trägt.
+- Frage: Errate das Wort: Ein Kleidungsstück, das man im Winter trägt.
+- Frage: Diskutiere die Auswirkungen von „Klimawandel“ auf den Planeten.
+- Frage: Erkläre, warum ein „Schlüssel“ wichtig ist.
+- Frage: Errate das Wort: Ein Gegenstand, mit dem man Türen öffnet.
 
 B2:
-- Frage: Analysiere die Auswirkungen von "Künstlicher Intelligenz" auf die Arbeitswelt.
-- Frage: Wie schreibt man das Wort "Papier" (siehe Bild)? -> Papier
-- Frage: Errate das Wort: Ein Material, auf dem man schreibt (siehe Bild)? -> Papier
-- Frage: Analysiere die Auswirkungen von "Globalisierung" auf lokale Wirtschaften.
-- Frage: Wie schreibt man das Wort "Tasche" (siehe Bild)? -> Tasche
-- Frage: Errate das Wort: Ein Gegenstand, den man trägt, um Dinge zu transportieren (siehe Bild)? -> Tasche
-- Frage: Analysiere die Auswirkungen von "Klimawandel" auf die Umwelt.
-- Frage: Wie schreibt man das Wort "Schuh" (siehe Bild)? -> Schuh
-- Frage: Errate das Wort: Ein Kleidungsstück, das man an den Füßen trägt (siehe Bild)? -> Schuh
-- Frage: Analysiere die Auswirkungen von "Nachhaltigkeit" auf Unternehmen.
-- Frage: Wie schreibt man das Wort "Jacke" (siehe Bild)? -> Jacke
-- Frage: Errate das Wort: Ein Kleidungsstück, das man im Winter trägt (siehe Bild)? -> Jacke
-- Frage: Analysiere die Auswirkungen von "Demokratie" auf die Gesellschaft.
-- Frage: Wie schreibt man das Wort "Hut" (siehe Bild)? -> Hut
-- Frage: Errate das Wort: Ein Accessoire, das man auf dem Kopf trägt (siehe Bild)? -> Hut
-- Frage: Analysiere die Auswirkungen von "Menschenrechte" auf die Politik.
-- Frage: Wie schreibt man das Wort "Brille" (siehe Bild)? -> Brille
-- Frage: Errate das Wort: Ein Accessoire, das man vor den Augen trägt (siehe Bild)? -> Brille
-- Frage: Analysiere die Auswirkungen von "Umweltschutz" auf die Wirtschaft.
-- Frage: Wie schreibt man das Wort "Schlüssel" (siehe Bild)? -> Schlüssel
-- Frage: Errate das Wort: Ein Gegenstand, mit dem man Türen öffnet (siehe Bild)? -> Schlüssel
-- Frage: Analysiere die Auswirkungen von "Biodiversität" auf Ökosysteme.
-- Frage: Wie schreibt man das Wort "Geld" (siehe Bild)? -> Geld
-- Frage: Errate das Wort: Ein Zahlungsmittel (siehe Bild)? -> Geld
-- Frage: Analysiere die Auswirkungen von "Erneuerbare Energie" auf die Energieversorgung.
-- Frage: Wie schreibt man das Wort "Lampe" (siehe Bild)? -> Lampe
-- Frage: Errate das Wort: Ein Gegenstand, der Licht gibt (siehe Bild)? -> Lampe
-- Frage: Analysiere die Auswirkungen von "Blockchain" auf die Finanzindustrie.
-- Frage: Wie schreibt man das Wort "Teppich" (siehe Bild)? -> Teppich
-- Frage: Errate das Wort: Ein Gegenstand, der auf dem Boden liegt (siehe Bild)? -> Teppich
+- Frage: Analysiere, wie „Globalisierung“ die lokale Wirtschaft verändert.
+- Frage: Beschreibe, wofür man „Papier“ im Alltag verwendet.
+- Frage: Errate das Wort: Ein Material, auf dem man schreibt.
+- Frage: Analysiere, wie „Nachhaltigkeit“ die Arbeitswelt beeinflusst.
+- Frage: Erkläre, warum „Geld“ in der Gesellschaft wichtig ist.
+- Frage: Errate das Wort: Ein Zahlungsmittel.
 
 C1:
-- Frage: Diskutiere die ethischen Implikationen von "Künstlicher Intelligenz".
-- Frage: Wie schreibt man das Wort "Bett" (siehe Bild)? -> Bett
-- Frage: Errate das Wort: Ein Möbelstück, auf dem man schläft (siehe Bild)? -> Bett
-- Frage: Diskutiere die ethischen Implikationen von "Globalisierung".
-- Frage: Wie schreibt man das Wort "Bild" (siehe Bild)? -> Bild
-- Frage: Errate das Wort: Ein Gegenstand, der Bilder zeigt (siehe Bild)? -> Bild
-- Frage: Diskutiere die ethischen Implikationen von "Klimawandel".
-- Frage: Wie schreibt man das Wort "Stift" (siehe Bild)? -> Stift
-- Frage: Errate das Wort: Ein Gegenstand, den man zum Schreiben benutzt (siehe Bild)? -> Stift
-- Frage: Diskutiere die ethischen Implikationen von "Nachhaltigkeit".
-- Frage: Wie schreibt man das Wort "Papier" (siehe Bild)? -> Papier
-- Frage: Errate das Wort: Ein Material, auf dem man schreibt (siehe Bild)? -> Papier
-- Frage: Diskutiere die ethischen Implikationen von "Demokratie".
-- Frage: Wie schreibt man das Wort "Tasche" (siehe Bild)? -> Tasche
-- Frage: Errate das Wort: Ein Gegenstand, den man trägt, um Dinge zu transportieren (siehe Bild)? -> Tasche
-- Frage: Diskutiere die ethischen Implikationen von "Menschenrechte".
-- Frage: Wie schreibt man das Wort "Schuh" (siehe Bild)? -> Schuh
-- Frage: Errate das Wort: Ein Kleidungsstück, das man an den Füßen trägt (siehe Bild)? -> Schuh
-- Frage: Diskutiere die ethischen Implikationen von "Umweltschutz".
-- Frage: Wie schreibt man das Wort "Jacke" (siehe Bild)? -> Jacke
-- Frage: Errate das Wort: Ein Kleidungsstück, das man im Winter trägt (siehe Bild)? -> Jacke
-- Frage: Diskutiere die ethischen Implikationen von "Biodiversität".
-- Frage: Wie schreibt man das Wort "Hut" (siehe Bild)? -> Hut
-- Frage: Errate das Wort: Ein Accessoire, das man auf dem Kopf trägt (siehe Bild)? -> Hut
-- Frage: Diskutiere die ethischen Implikationen von "Erneuerbare Energie".
-- Frage: Wie schreibt man das Wort "Brille" (siehe Bild)? -> Brille
-- Frage: Errate das Wort: Ein Accessoire, das man vor den Augen trägt (siehe Bild)? -> Brille
-- Frage: Diskutiere die ethischen Implikationen von "Blockchain".
-- Frage: Wie schreibt man das Wort "Schlüssel" (siehe Bild)? -> Schlüssel
-- Frage: Errate das Wort: Ein Gegenstand, mit dem man Türen öffnet (siehe Bild)? -> Schlüssel
+- Frage: Diskutiere, welche ethischen Implikationen die „Künstliche Intelligenz“ mit sich bringt.
+- Frage: Beschreibe, warum „Schuhe“ im Alltag wichtig sind.
+- Frage: Errate das Wort: Ein Kleidungsstück, das man an den Füßen trägt.
+- Frage: Diskutiere die Auswirkungen der „Globalisierung“ auf Kulturen.
+- Frage: Erkläre, warum ein „Stift“ auch heute noch nützlich ist.
+- Frage: Errate das Wort: Ein Gegenstand, den man zum Schreiben benutzt.
 
 C2:
-- Frage: Analysiere die Auswirkungen von "Künstlicher Intelligenz" auf die Arbeitswelt.
-- Frage: Wie schreibt man das Wort "Geld" (siehe Bild)? -> Geld
-- Frage: Errate das Wort: Ein Zahlungsmittel (siehe Bild)? -> Geld
-- Frage: Analysiere die Auswirkungen von "Globalisierung" auf lokale Wirtschaften.
-- Frage: Wie schreibt man das Wort "Lampe" (siehe Bild)? -> Lampe
-- Frage: Errate das Wort: Ein Gegenstand, der Licht gibt (siehe Bild)? -> Lampe
-- Frage: Analysiere die Auswirkungen von "Klimawandel" auf die Umwelt.
-- Frage: Wie schreibt man das Wort "Teppich" (siehe Bild)? -> Teppich
-- Frage: Errate das Wort: Ein Gegenstand, der auf dem Boden liegt (siehe Bild)? -> Teppich
-- Frage: Analysiere die Auswirkungen von "Nachhaltigkeit" auf Unternehmen.
-- Frage: Wie schreibt man das Wort "Bett" (siehe Bild)? -> Bett
-- Frage: Errate das Wort: Ein Möbelstück, auf dem man schläft (siehe Bild)? -> Bett
-- Frage: Analysiere die Auswirkungen von "Demokratie" auf die Gesellschaft.
-- Frage: Wie schreibt man das Wort "Bild" (siehe Bild)? -> Bild
-- Frage: Errate das Wort: Ein Gegenstand, der Bilder zeigt (siehe Bild)? -> Bild
-- Frage: Analysiere die Auswirkungen von "Menschenrechte" auf die Politik.
-- Frage: Wie schreibt man das Wort "Stift" (siehe Bild)? -> Stift
-- Frage: Errate das Wort: Ein Gegenstand, den man zum Schreiben benutzt (siehe Bild)? -> Stift
-- Frage: Analysiere die Auswirkungen von "Umweltschutz" auf die Wirtschaft.
-- Frage: Wie schreibt man das Wort "Papier" (siehe Bild)? -> Papier
-- Frage: Errate das Wort: Ein Material, auf dem man schreibt (siehe Bild)? -> Papier
-- Frage: Analysiere die Auswirkungen von "Biodiversität" auf Ökosysteme.
-- Frage: Wie schreibt man das Wort "Tasche" (siehe Bild)? -> Tasche
-- Frage: Errate das Wort: Ein Gegenstand, den man trägt, um Dinge zu transportieren (siehe Bild)? -> Tasche
-- Frage: Analysiere die Auswirkungen von "Erneuerbare Energie" auf die Energieversorgung.
-- Frage: Wie schreibt man das Wort "Schuh" (siehe Bild)? -> Schuh
-- Frage: Errate das Wort: Ein Kleidungsstück, das man an den Füßen trägt (siehe Bild)? -> Schuh
-- Frage: Analysiere die Auswirkungen von "Blockchain" auf die Finanzindustrie.
-- Frage: Wie schreibt man das Wort "Jacke" (siehe Bild)? -> Jacke
-- Frage: Errate das Wort: Ein Kleidungsstück, das man im Winter trägt (siehe Bild)? -> Jacke
+- Frage: Analysiere die ethischen Implikationen des „Klimawandels“ für die Gesellschaft.
+- Frage: Beschreibe, wofür man eine „Tasche“ im Alltag verwendet.
+- Frage: Errate das Wort: Ein Gegenstand, den man trägt, um Dinge zu transportieren.
+- Frage: Analysiere, wie „Blockchain“ die Finanzwelt revolutioniert.
+- Frage: Erkläre, warum ein „Bild“ in der Kunst wichtig ist.
+- Frage: Errate das Wort: Ein Gegenstand, der Bilder zeigt.

@@ -165,7 +165,7 @@ public class View extends JFrame {
         // Assemble the frame
         frame.add(menuPanel, BorderLayout.NORTH);
         frame.add(mainPanel, BorderLayout.CENTER);
-        frame.add(progressBar, BorderLayout.SOUTH);
+        //frame.add(progressBar, BorderLayout.SOUTH);
         frame.setVisible(true);
     }
 
@@ -173,7 +173,5 @@ public class View extends JFrame {
         cardLayout.show(mainPanel, name);
     }
 
-    public void updateProgress(int progress) {
-        progressBar.setValue(progress);
-    }
+
 }

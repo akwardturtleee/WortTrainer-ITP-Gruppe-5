@@ -139,22 +139,10 @@ public class Nutzer extends JPanel {
         }
 
         JOptionPane.showMessageDialog(this, "Nutzerdaten erfolgreich gespeichert!", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
-        fillProgressBar();
     }
 
-    private void fillProgressBar() {
-        int counter = 0;
-        while (counter <= 100) {
-            // Assuming there's a method updateProgress in View that gets called here.
-            // view.updateProgress(counter);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            counter += 10;
-        }
-    }
+
+
 
     private static boolean isValidEmail(String email) {
         String emailRegex = "^[\\w-.+]+@[\\w-]+\\.[a-z]{2,6}$";
