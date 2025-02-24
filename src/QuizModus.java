@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class QuizModus extends JPanel implements ActionListener {
 	private Frage[] fragen;
@@ -17,11 +20,18 @@ public class QuizModus extends JPanel implements ActionListener {
 	private JTextField antwortFeld;
 	private JButton bestaetigenButton;
 	private JLabel feedbackLabel;
+	private JLabel imageLabel;
 	private Controller controller;
 
-	public QuizModus(Controller controller, Fragenpool fragenpool) {
+	// The constructor now accepts a language level (e.g. "A1", "B2", etc.) to filter questions.
+	public QuizModus(Controller controller, Fragenpool fragenpool, String selectedLevel) {
 		this.controller = controller;
-		this.fragen = fragenpool.getFragen().toArray(new Frage[0]);
+		List<Frage> filteredList = fragenpool.getFragen()
+				.stream()
+				.filter(f -> f.getFrageTyp().equalsIgnoreCase(selectedLevel))
+				.collect(Collectors.toList());
+		Collections.shuffle(filteredList);
+		this.fragen = filteredList.toArray(new Frage[0]);
 		this.aktuelleFrageIndex = 0;
 		this.punkte = 0;
 		this.richtigeAntworten = 0;
@@ -30,25 +40,29 @@ public class QuizModus extends JPanel implements ActionListener {
 
 		setLayout(new BorderLayout());
 
-		frageLabel = new JLabel("Frage: ");
+		frageLabel = new JLabel("", SwingConstants.CENTER);
 		frageLabel.setFont(new Font("Arial", Font.BOLD, 20));
-		frageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
 		antwortFeld = new JTextField(20);
 		bestaetigenButton = new JButton("Antwort bestätigen");
 		bestaetigenButton.addActionListener(this);
 
-		feedbackLabel = new JLabel("");
+		feedbackLabel = new JLabel("", SwingConstants.CENTER);
 		feedbackLabel.setFont(new Font("Arial", Font.PLAIN, 16));
-		feedbackLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+		imageLabel = new JLabel("", SwingConstants.CENTER);
 
 		JPanel inputPanel = new JPanel();
 		inputPanel.add(antwortFeld);
 		inputPanel.add(bestaetigenButton);
 
+		JPanel bottomPanel = new JPanel(new BorderLayout());
+		bottomPanel.add(feedbackLabel, BorderLayout.NORTH);
+		bottomPanel.add(inputPanel, BorderLayout.SOUTH);
+
 		add(frageLabel, BorderLayout.NORTH);
-		add(inputPanel, BorderLayout.CENTER);
-		add(feedbackLabel, BorderLayout.SOUTH);
+		add(imageLabel, BorderLayout.CENTER);
+		add(bottomPanel, BorderLayout.SOUTH);
 
 		naechsteFrage();
 	}
@@ -56,7 +70,14 @@ public class QuizModus extends JPanel implements ActionListener {
 	private void naechsteFrage() {
 		if (aktuelleFrageIndex < fragen.length) {
 			Frage aktuelleFrage = fragen[aktuelleFrageIndex];
-			frageLabel.setText("Frage: " + aktuelleFrage.getInhalt());
+			frageLabel.setText(aktuelleFrage.getInhalt());
+			if (aktuelleFrage.getImagePath() != null) {
+				ImageIcon icon = new ImageIcon(aktuelleFrage.getImagePath());
+				Image scaledImage = icon.getImage().getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+				imageLabel.setIcon(new ImageIcon(scaledImage));
+			} else {
+				imageLabel.setIcon(null);
+			}
 		} else {
 			beendeQuiz();
 		}
