@@ -55,7 +55,7 @@ public class View extends JFrame {
         // Home menu as a house icon with embedded text, without a menu item.
         JMenu home = new JMenu();
         home.setPreferredSize(squareSize);
-        home.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        home.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
         home.setHorizontalTextPosition(SwingConstants.CENTER);
         home.setVerticalTextPosition(SwingConstants.CENTER);
         home.setAlignmentY(Component.CENTER_ALIGNMENT);
@@ -73,13 +73,12 @@ public class View extends JFrame {
         // Spiel menu with centered text using HTML.
         JMenu spiel = new JMenu();
         spiel.setPreferredSize(squareSize);
-        spiel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        spiel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
         spiel.setHorizontalTextPosition(SwingConstants.CENTER);
         spiel.setVerticalTextPosition(SwingConstants.CENTER);
         spiel.setAlignmentY(Component.CENTER_ALIGNMENT);
         spiel.setText("<html><div style='text-align:center;'>Spiel</div></html>");
         // Add items if needed or add a mouse listener similar to home for direct navigation.
-        // Here we add menu items as before.
         JMenuItem spielItem = new JMenuItem("Starten");
         spielItem.setMnemonic('S');
         spielItem.setActionCommand("spiel");
@@ -95,7 +94,7 @@ public class View extends JFrame {
         // Quiz menu with centered text using HTML.
         JMenu quiz = new JMenu();
         quiz.setPreferredSize(squareSize);
-        quiz.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        quiz.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
         quiz.setHorizontalTextPosition(SwingConstants.CENTER);
         quiz.setVerticalTextPosition(SwingConstants.CENTER);
         quiz.setAlignmentY(Component.CENTER_ALIGNMENT);
@@ -118,7 +117,7 @@ public class View extends JFrame {
         // Settings menu using a gear icon with centered text.
         JMenu settingsMenu = new JMenu();
         settingsMenu.setPreferredSize(squareSize);
-        settingsMenu.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        settingsMenu.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
         settingsMenu.setHorizontalTextPosition(SwingConstants.CENTER);
         settingsMenu.setVerticalTextPosition(SwingConstants.CENTER);
         settingsMenu.setAlignmentY(Component.CENTER_ALIGNMENT);
@@ -136,7 +135,7 @@ public class View extends JFrame {
         // User menu with a user icon using HTML for centered text.
         JMenu userMenu = new JMenu();
         userMenu.setPreferredSize(squareSize);
-        userMenu.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        userMenu.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
         userMenu.setHorizontalTextPosition(SwingConstants.CENTER);
         userMenu.setVerticalTextPosition(SwingConstants.CENTER);
         userMenu.setAlignmentY(Component.CENTER_ALIGNMENT);
@@ -155,6 +154,7 @@ public class View extends JFrame {
 
         JPanel menuPanel = new JPanel(new BorderLayout());
         menuPanel.add(menuBar, BorderLayout.CENTER);
+        // Increased the menu panel height from 18 to 75
         menuPanel.setPreferredSize(new Dimension(frame.getWidth(), 75));
 
         // Progress bar at the bottom of the frame
