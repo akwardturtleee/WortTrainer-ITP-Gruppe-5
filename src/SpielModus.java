@@ -8,25 +8,29 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SpielModus extends JPanel implements ActionListener {
-	private String wort = "PROGRAMMIEREN"; // Beispielwort (kann später zufällig gewählt werden)
-	private Set<Character> gerateneBuchstaben = new HashSet<>();
-	private int fehlversuche = 0;
-	private final int maxFehlversuche = 6;
+	private Controller controller;
+	private String wort = "PROGRAMMIEREN";  // Das Wort, das der Benutzer erraten muss
+	private Set<Character> gerateneBuchstaben = new HashSet<>();  // Set für bereits geratene Buchstaben
+	private int fehlversuche = 0;  // Fehlversuche des Benutzers
+	private final int maxFehlversuche = 6;  // Maximale Anzahl an Fehlversuchen
 
+	// GUI-Komponenten
 	private JLabel wortAnzeige;
 	private JLabel fehlversucheLabel;
 	private JTextField buchstabenEingabe;
 	private JButton ratenButton;
 	private JButton neustartButton;
+	private JPanel hangmanPanel;
 
 	public SpielModus(Controller controller) {
-		setLayout(new BorderLayout());
+		this.controller = controller;
+		setLayout(new BorderLayout(10, 10));
 
 		// Panel für das Spiel mit GridLayout (3 Zeilen, 1 Spalte)
 		JPanel spielPanel = new JPanel(new GridLayout(3, 1, 10, 10));
 
 		// 1. Zeile: Titel
-		JLabel titel = new JLabel("🎯 Hangman-Spiel", SwingConstants.CENTER);
+		JLabel titel = new JLabel("Hangman-Spiel", SwingConstants.CENTER);
 		titel.setFont(new Font("Arial", Font.BOLD, 26));
 		spielPanel.add(titel);
 
@@ -39,7 +43,7 @@ public class SpielModus extends JPanel implements ActionListener {
 		JPanel inputPanel = new JPanel(new FlowLayout());
 		buchstabenEingabe = new JTextField(2);
 		buchstabenEingabe.setFont(new Font("Arial", Font.PLAIN, 20));
-		ratenButton = new JButton("🔍 Raten");
+		ratenButton = new JButton("Raten");
 		ratenButton.setFont(new Font("Arial", Font.BOLD, 18));
 		ratenButton.addActionListener(this);
 
@@ -53,16 +57,27 @@ public class SpielModus extends JPanel implements ActionListener {
 
 		// Unteres Panel für Fehlversuche und Neustart
 		JPanel bottomPanel = new JPanel(new GridLayout(1, 2, 10, 10));
-		fehlversucheLabel = new JLabel("❌ Fehlversuche: 0 / " + maxFehlversuche, SwingConstants.CENTER);
+		fehlversucheLabel = new JLabel("Fehlversuche: 0 / 6", SwingConstants.CENTER);
 		fehlversucheLabel.setFont(new Font("Arial", Font.PLAIN, 18));
 		bottomPanel.add(fehlversucheLabel);
 
-		neustartButton = new JButton("🔄 Neustart");
+		neustartButton = new JButton("Neustart");
 		neustartButton.setFont(new Font("Arial", Font.BOLD, 18));
 		neustartButton.addActionListener(e -> spielZurücksetzen());
 		bottomPanel.add(neustartButton);
 
 		add(bottomPanel, BorderLayout.SOUTH);
+
+		// Panel für den Hangman-Zeichenbereich
+		hangmanPanel = new JPanel() {
+			@Override
+			protected void paintComponent(Graphics g) {
+				super.paintComponent(g);
+				zeichneHangman(g, fehlversuche);
+			}
+		};
+		hangmanPanel.setPreferredSize(new Dimension(200, 300));  // Größe des Panels angepasst
+		add(hangmanPanel, BorderLayout.WEST);
 	}
 
 	@Override
@@ -70,13 +85,13 @@ public class SpielModus extends JPanel implements ActionListener {
 		String eingabe = buchstabenEingabe.getText().toUpperCase();
 
 		if (eingabe.length() != 1 || !Character.isLetter(eingabe.charAt(0))) {
-			JOptionPane.showMessageDialog(this, "⚠ Bitte gib einen einzelnen Buchstaben ein!");
+			JOptionPane.showMessageDialog(this, "Bitte gib einen einzelnen Buchstaben ein!");
 			return;
 		}
 
 		char buchstabe = eingabe.charAt(0);
 		if (gerateneBuchstaben.contains(buchstabe)) {
-			JOptionPane.showMessageDialog(this, "⚠ Dieser Buchstabe wurde bereits geraten!");
+			JOptionPane.showMessageDialog(this, "Dieser Buchstabe wurde bereits geraten!");
 			return;
 		}
 
@@ -87,20 +102,24 @@ public class SpielModus extends JPanel implements ActionListener {
 		}
 
 		wortAnzeige.setText(getAngezeigtesWort());
-		fehlversucheLabel.setText("❌ Fehlversuche: " + fehlversuche + " / " + maxFehlversuche);
+		fehlversucheLabel.setText("Fehlversuche: " + fehlversuche + " / " + maxFehlversuche);
+
+		// Hangman-Grafik aktualisieren
+		hangmanPanel.repaint();
 
 		// Spielende prüfen
 		if (fehlversuche >= maxFehlversuche) {
-			JOptionPane.showMessageDialog(this, "💀 Verloren! Das Wort war: " + wort);
+			JOptionPane.showMessageDialog(this, "Verloren! Das Wort war: " + wort);
 			spielZurücksetzen();
 		} else if (!getAngezeigtesWort().contains("_")) {
-			JOptionPane.showMessageDialog(this, "🎉 Gewonnen! Das Wort war: " + wort);
+			JOptionPane.showMessageDialog(this, "Gewonnen! Das Wort war: " + wort);
 			spielZurücksetzen();
 		}
 
 		buchstabenEingabe.setText("");
 	}
 
+	// Methode zur Darstellung des angezeigten Wortes
 	private String getAngezeigtesWort() {
 		StringBuilder sb = new StringBuilder();
 		for (char c : wort.toCharArray()) {
@@ -113,10 +132,38 @@ public class SpielModus extends JPanel implements ActionListener {
 		return sb.toString().trim();
 	}
 
+	// Methode zum Zurücksetzen des Spiels
 	private void spielZurücksetzen() {
 		gerateneBuchstaben.clear();
 		fehlversuche = 0;
 		wortAnzeige.setText(getAngezeigtesWort());
-		fehlversucheLabel.setText("❌ Fehlversuche: 0 / " + maxFehlversuche);
+		fehlversucheLabel.setText("Fehlversuche: 0 / " + maxFehlversuche);
+		hangmanPanel.repaint();
+	}
+
+	// Methode zum Zeichnen des Hangman-Gesamtfortschritts
+	private void zeichneHangman(Graphics g, int fehlversuche) {
+		// Hangman-Grafik Schritt für Schritt basierend auf den Fehlversuchen
+		int x = 50; // Ursprungspunkt
+		int y = 200; // Ausgangspunkt für die Basis
+
+		// Basis
+		g.drawLine(x, y, x + 100, y);  // Basis des Galgens
+
+		// Stange (vertikal)
+		g.drawLine(x + 50, y, x + 50, y - 100);  // Vertikale Stange
+
+		// Querbalken
+		g.drawLine(x + 50, y - 100, x + 100, y - 100);  // Querbalken oben
+
+		// Seil (zum Kopf)
+		g.drawLine(x + 50, y - 100, x + 50, y - 50);  // Seil vom Querbalken zum Kopf
+
+		if (fehlversuche > 0) g.drawOval(150, 80, 50, 50); // Kopf
+		if (fehlversuche > 1) g.drawLine(150, 130, 200, 200); // Körper
+		if (fehlversuche > 2) g.drawLine(150, 150, 170, 180); // linker Arm
+		if (fehlversuche > 3) g.drawLine(150, 150, 230, 180); // rechter Arm
+		if (fehlversuche > 4) g.drawLine(150, 200, 170, 250); // linkes Bein
+		if (fehlversuche > 5) g.drawLine(150, 200, 230, 250); // rechtes Bein
 	}
 }
