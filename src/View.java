@@ -32,10 +32,10 @@ public class View extends JFrame {
 
         // User Panel
         JPanel userPanel = new Nutzer(controller);
-        userPanel.setBackground(new Color(100, 149, 237));
+        //userPanel.setBackground(new Color(100, 149, 237));
 
         // Quiz Panel with default language level "A1"
-        JPanel quizPanel = new QuizModus(controller, new Fragenpool(), "A1");
+        JPanel quizPanel = new QuizModus(controller, new Fragenpool(),"A1");
 
         // Spiel Panel
         JPanel spielPanel = new SpielModus(controller);

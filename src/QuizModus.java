@@ -1,4 +1,4 @@
-// File: src/QuizModus.java
+//File: src/QuizModus.java
 package src;
 
 import javax.swing.*;
