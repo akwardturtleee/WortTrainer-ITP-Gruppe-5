@@ -19,48 +19,53 @@ public class Nutzer extends JPanel {
 
     public Nutzer(Controller controller) {
         this.controller = controller;
-        this.view = view; // View-Instanz wird korrekt initialisiert
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Name
         gbc.gridx = 0; gbc.gridy = 0;
-        add(new JLabel("Name:"), gbc);
+        JLabel nameLabel = new JLabel("Name:");
+        nameLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+        add(nameLabel, gbc);
         nameField = new JTextField(15);
         gbc.gridx = 1;
         add(nameField, gbc);
 
-        // Alter
         gbc.gridx = 0; gbc.gridy = 1;
-        add(new JLabel("Alter:"), gbc);
+        JLabel alterLabel = new JLabel("Alter:");
+        alterLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+        add(alterLabel, gbc);
         alterField = new JTextField(5);
         gbc.gridx = 1;
         add(alterField, gbc);
 
-        // Sprachlevel
         gbc.gridx = 0; gbc.gridy = 2;
-        add(new JLabel("Sprachlevel:"), gbc);
+        JLabel levelLabel = new JLabel("Sprachlevel:");
+        levelLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+        add(levelLabel, gbc);
         String[] levels = {"A1 - Anfänger", "A2-Grundlegende Kenntnisse", "B1-Fortgeschrittene Sprachkenntnisse", "B2-Selbstständige Sprachkenntnisse", "C1-Fachkundige Sprachkenntnisse", "C2-muttersprachliche Kenntnisse"};
         sprachlevelBox = new JComboBox<>(levels);
         gbc.gridx = 1;
         add(sprachlevelBox, gbc);
 
-        // E-Mail
         gbc.gridx = 0; gbc.gridy = 3;
-        add(new JLabel("E-Mail Adresse:"), gbc);
+        JLabel emailLabel = new JLabel("E-Mail Adresse:");
+        emailLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+        add(emailLabel, gbc);
         emailField = new JTextField(20);
         gbc.gridx = 1;
         add(emailField, gbc);
 
-        // Schulbesuch
         schulbesuchLabel = new JLabel("Ich besuche eine Schule, wo ich aktiv am Deutschunterricht teilnehme.");
+        schulbesuchLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
         gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
         add(schulbesuchLabel, gbc);
 
         yesButton = new JRadioButton("Ja");
+        yesButton.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
         noButton = new JRadioButton("Nein");
+        noButton.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
         schulbesuchGroup = new ButtonGroup();
         schulbesuchGroup.add(yesButton);
         schulbesuchGroup.add(noButton);
@@ -82,8 +87,8 @@ public class Nutzer extends JPanel {
             }
         });
 
-        // Speichern-Button
         speichernButton = new JButton("Speichern");
+        speichernButton.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
         gbc.gridx = 0; gbc.gridy = 9; gbc.gridwidth = 2;
         add(speichernButton, gbc);
 
@@ -134,14 +139,14 @@ public class Nutzer extends JPanel {
         }
 
         JOptionPane.showMessageDialog(this, "Nutzerdaten erfolgreich gespeichert!", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
-
         fillProgressBar();
     }
 
     private void fillProgressBar() {
         int counter = 0;
         while (counter <= 100) {
-            view.updateProgress(counter);
+            // Assuming there's a method updateProgress in View that gets called here.
+            // view.updateProgress(counter);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

@@ -1,7 +1,10 @@
 package src;
 
 import javax.swing.*;
+import javax.swing.event.MenuKeyEvent;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class View extends JFrame {
     private Controller controller;
@@ -12,7 +15,7 @@ public class View extends JFrame {
 
     public View(Controller controller) {
         this.controller = controller;
-        frame = new JFrame("Worttrainer");
+        frame = new JFrame("WortTrainer");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setLayout(new BorderLayout(10, 10));
@@ -23,7 +26,7 @@ public class View extends JFrame {
         // Home Panel
         JPanel homePanel = new JPanel(new GridLayout(2, 1));
         JLabel schriftLabel = new JLabel("WILLKOMMEN BEIM WORTTRAINER!", SwingConstants.CENTER);
-        schriftLabel.setFont(new Font("Arial", Font.PLAIN, 50));
+        schriftLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 48));
         homePanel.add(schriftLabel);
         homePanel.setBackground(new Color(100, 149, 237));
 
@@ -43,21 +46,40 @@ public class View extends JFrame {
         mainPanel.add(quizPanel, "quiz");
         mainPanel.add(spielPanel, "spiel");
 
-        // Menu bar and menu items creation
+        // Create menu bar and menus
         JMenuBar menuBar = new JMenuBar();
 
-        JMenu home = new JMenu("Home");
-        home.setPreferredSize(new Dimension(70, 100));
-        home.setFont(new Font("Arial", Font.PLAIN, 20));
-        JMenuItem homeItem = new JMenuItem("Home");
-        homeItem.setMnemonic('H');
-        homeItem.setActionCommand("home");
-        homeItem.addActionListener(controller);
-        home.add(homeItem);
+        // Define a common square dimension
+        Dimension squareSize = new Dimension(75, 75);
 
-        JMenu spiel = new JMenu("Spiel");
-        spiel.setPreferredSize(new Dimension(80, 100));
-        spiel.setFont(new Font("Arial", Font.PLAIN, 20));
+        // Home menu as a house icon with embedded text, without a menu item.
+        JMenu home = new JMenu();
+        home.setPreferredSize(squareSize);
+        home.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        home.setHorizontalTextPosition(SwingConstants.CENTER);
+        home.setVerticalTextPosition(SwingConstants.CENTER);
+        home.setAlignmentY(Component.CENTER_ALIGNMENT);
+        // Use HTML to center both the icon and label within the square.
+        home.setText("<html><div style='text-align:center;'>&#8962;<br>Home</div></html>");
+        // Add a mouse listener to trigger home navigation on click.
+        home.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                showCard("home");
+            }
+        });
+        menuBar.add(home);
+
+        // Spiel menu with centered text using HTML.
+        JMenu spiel = new JMenu();
+        spiel.setPreferredSize(squareSize);
+        spiel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        spiel.setHorizontalTextPosition(SwingConstants.CENTER);
+        spiel.setVerticalTextPosition(SwingConstants.CENTER);
+        spiel.setAlignmentY(Component.CENTER_ALIGNMENT);
+        spiel.setText("<html><div style='text-align:center;'>Spiel</div></html>");
+        // Add items if needed or add a mouse listener similar to home for direct navigation.
+        // Here we add menu items as before.
         JMenuItem spielItem = new JMenuItem("Starten");
         spielItem.setMnemonic('S');
         spielItem.setActionCommand("spiel");
@@ -68,24 +90,16 @@ public class View extends JFrame {
         spielItem2.addActionListener(controller);
         spiel.add(spielItem);
         spiel.add(spielItem2);
+        menuBar.add(spiel);
 
-        JMenu benutzer = new JMenu("Benutzer");
-        benutzer.setPreferredSize(new Dimension(100, 100));
-        benutzer.setFont(new Font("Arial", Font.PLAIN, 20));
-        JMenuItem benutzerItem = new JMenuItem("Profil");
-        benutzerItem.setMnemonic('P');
-        benutzerItem.setActionCommand("benutzer");
-        benutzerItem.addActionListener(controller);
-        JMenuItem benutzerItem2 = new JMenuItem("Fortschritt");
-        benutzerItem2.setMnemonic('F');
-        benutzerItem2.setActionCommand("benutzer2");
-        benutzerItem2.addActionListener(controller);
-        benutzer.add(benutzerItem);
-        benutzer.add(benutzerItem2);
-
-        JMenu quiz = new JMenu("Quiz");
-        quiz.setPreferredSize(new Dimension(50, 100));
-        quiz.setFont(new Font("Arial", Font.PLAIN, 20));
+        // Quiz menu with centered text using HTML.
+        JMenu quiz = new JMenu();
+        quiz.setPreferredSize(squareSize);
+        quiz.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        quiz.setHorizontalTextPosition(SwingConstants.CENTER);
+        quiz.setVerticalTextPosition(SwingConstants.CENTER);
+        quiz.setAlignmentY(Component.CENTER_ALIGNMENT);
+        quiz.setText("<html><div style='text-align:center;'>Quiz</div></html>");
         JMenuItem quizItem = new JMenuItem("Quiz Starten");
         quizItem.setMnemonic('Q');
         quizItem.setActionCommand("quiz");
@@ -96,11 +110,48 @@ public class View extends JFrame {
         quizItem2.addActionListener(controller);
         quiz.add(quizItem);
         quiz.add(quizItem2);
-
-        menuBar.add(home);
-        menuBar.add(spiel);
-        menuBar.add(benutzer);
         menuBar.add(quiz);
+
+        // Add glue to push further menus to the right
+        menuBar.add(Box.createHorizontalGlue());
+
+        // Settings menu using a gear icon with centered text.
+        JMenu settingsMenu = new JMenu();
+        settingsMenu.setPreferredSize(squareSize);
+        settingsMenu.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        settingsMenu.setHorizontalTextPosition(SwingConstants.CENTER);
+        settingsMenu.setVerticalTextPosition(SwingConstants.CENTER);
+        settingsMenu.setAlignmentY(Component.CENTER_ALIGNMENT);
+        settingsMenu.setText("<html><div style='text-align:center;'>&#9881;<br>Einst.</div></html>");
+        JMenuItem settingsItem = new JMenuItem("Einstellungen");
+        settingsItem.setActionCommand("settings");
+        settingsItem.addActionListener(controller);
+        settingsMenu.add(settingsItem);
+        JMenuItem infosItem = new JMenuItem("Infos");
+        infosItem.setActionCommand("infos");
+        infosItem.addActionListener(controller);
+        settingsMenu.add(infosItem);
+        menuBar.add(settingsMenu);
+
+        // User menu with a user icon using HTML for centered text.
+        JMenu userMenu = new JMenu();
+        userMenu.setPreferredSize(squareSize);
+        userMenu.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+        userMenu.setHorizontalTextPosition(SwingConstants.CENTER);
+        userMenu.setVerticalTextPosition(SwingConstants.CENTER);
+        userMenu.setAlignmentY(Component.CENTER_ALIGNMENT);
+        userMenu.setText("<html><div style='text-align:center;'>&#128100; Profil</div></html>");
+        JMenuItem profileItem = new JMenuItem("Profil");
+        profileItem.setMnemonic('P');
+        profileItem.setActionCommand("benutzer");
+        profileItem.addActionListener(controller);
+        JMenuItem progressItem = new JMenuItem("Fortschritt");
+        progressItem.setMnemonic('F');
+        progressItem.setActionCommand("benutzer2");
+        progressItem.addActionListener(controller);
+        userMenu.add(profileItem);
+        userMenu.add(progressItem);
+        menuBar.add(userMenu);
 
         JPanel menuPanel = new JPanel(new BorderLayout());
         menuPanel.add(menuBar, BorderLayout.CENTER);

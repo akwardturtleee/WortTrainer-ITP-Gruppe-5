@@ -1,12 +1,10 @@
+// File: src/QuizModus.java
 package src;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class QuizModus extends JPanel implements ActionListener {
 	private Frage[] fragen;
@@ -23,15 +21,31 @@ public class QuizModus extends JPanel implements ActionListener {
 	private JLabel imageLabel;
 	private Controller controller;
 
-	// The constructor now accepts a language level (e.g. "A1", "B2", etc.) to filter questions.
 	public QuizModus(Controller controller, Fragenpool fragenpool, String selectedLevel) {
 		this.controller = controller;
-		List<Frage> filteredList = fragenpool.getFragen()
-				.stream()
-				.filter(f -> f.getFrageTyp().equalsIgnoreCase(selectedLevel))
-				.collect(Collectors.toList());
-		Collections.shuffle(filteredList);
-		this.fragen = filteredList.toArray(new Frage[0]);
+		// Filter questions using a basic loop.
+		int total = 0;
+		for (int i = 0; i < fragenpool.getFragen().size(); i++) {
+			Frage f = fragenpool.getFragen().get(i);
+			if (f.getFrageTyp().equalsIgnoreCase(selectedLevel)) {
+				total++;
+			}
+		}
+		Frage[] filtered = new Frage[total];
+		int index = 0;
+		for (int i = 0; i < fragenpool.getFragen().size(); i++) {
+			Frage f = fragenpool.getFragen().get(i);
+			if (f.getFrageTyp().equalsIgnoreCase(selectedLevel)) {
+				filtered[index++] = f;
+			}
+		}
+		for (int i = filtered.length - 1; i > 0; i--) {
+			int j = (int) (Math.random() * (i + 1));
+			Frage temp = filtered[i];
+			filtered[i] = filtered[j];
+			filtered[j] = temp;
+		}
+		this.fragen = filtered;
 		this.aktuelleFrageIndex = 0;
 		this.punkte = 0;
 		this.richtigeAntworten = 0;
@@ -39,16 +53,20 @@ public class QuizModus extends JPanel implements ActionListener {
 		this.quizBeendet = false;
 
 		setLayout(new BorderLayout());
-
 		frageLabel = new JLabel("", SwingConstants.CENTER);
-		frageLabel.setFont(new Font("Arial", Font.BOLD, 20));
+		frageLabel.setFont(new Font("Arial Unicode MS", Font.BOLD, 20));
 
 		antwortFeld = new JTextField(20);
+		antwortFeld.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
+		// Allow Enter key to trigger answer confirmation.
+		antwortFeld.addActionListener(this);
+
 		bestaetigenButton = new JButton("Antwort bestätigen");
+		bestaetigenButton.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
 		bestaetigenButton.addActionListener(this);
 
 		feedbackLabel = new JLabel("", SwingConstants.CENTER);
-		feedbackLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+		feedbackLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
 
 		imageLabel = new JLabel("", SwingConstants.CENTER);
 
@@ -106,7 +124,6 @@ public class QuizModus extends JPanel implements ActionListener {
 		if (aktuelleFrageIndex < fragen.length) {
 			Frage aktuelleFrage = fragen[aktuelleFrageIndex];
 			String eingabe = antwortFeld.getText().trim();
-
 			if (pruefeAntwort(eingabe, aktuelleFrage)) {
 				feedbackLabel.setText("Richtig!");
 				richtigeAntworten++;
@@ -115,7 +132,6 @@ public class QuizModus extends JPanel implements ActionListener {
 				feedbackLabel.setText("Falsch!");
 				falscheAntworten++;
 			}
-
 			aktuelleFrageIndex++;
 			antwortFeld.setText("");
 			naechsteFrage();
