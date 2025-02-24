@@ -1,47 +1,47 @@
 A1:
-- Frage: Beschreibe, wofür man ein „Auto“ benutzt.
-- Frage: Errate das Wort: Ein Tier, das miaut.
-- Frage: Nenne drei verschiedene Arten von „Blumen“.
-- Frage: Errate das Wort: Ein Möbelstück, auf dem man sitzt.
-- Frage: Erkläre, warum ein „Fenster“ wichtig ist.
-- Frage: Errate das Wort: Ein Gegenstand, der Fenster schließt.
+- Frage: Beschreibe, wofür man ein „Auto“ benutzt. -> Zum Fahren von einem Ort zum anderen.
+- Frage: Errate das Wort: Ein Tier, das miaut. -> Katze.
+- Frage: Nenne drei verschiedene Arten von „Blumen“. -> Rose, Tulpe, Sonnenblume.
+- Frage: Errate das Wort: Ein Möbelstück, auf dem man sitzt. -> Stuhl.
+- Frage: Erkläre, warum ein „Fenster“ wichtig ist. -> Es lässt Licht und frische Luft in den Raum.
+- Frage: Errate das Wort: Ein Gegenstand, der Fenster schließt. -> Rollladen.
 
 A2:
-- Frage: Erkläre den Begriff „Energie“ in einfachen Worten.
-- Frage: Beschreibe, wofür man einen „Kühlschrank“ braucht.
-- Frage: Errate das Wort: Ein Gerät, das kühlt.
-- Frage: Erkläre den Begriff „Photosynthese“ in einem Satz.
-- Frage: Nenne drei Funktionen eines „Telefons“.
-- Frage: Errate das Wort: Ein Gerät, das man zum Telefonieren benutzt.
+- Frage: Erkläre den Begriff „Energie“ in einfachen Worten. -> Energie ist die Kraft, die Dinge bewegt oder zum Leuchten bringt.
+- Frage: Beschreibe, wofür man einen „Kühlschrank“ braucht. -> Zum Kühlen und Frischhalten von Lebensmitteln.
+- Frage: Errate das Wort: Ein Gerät, das kühlt. -> Kühlschrank.
+- Frage: Erkläre den Begriff „Photosynthese“ in einem Satz. -> Pflanzen nutzen Licht, um Nahrung und Sauerstoff zu erzeugen.
+- Frage: Nenne drei Funktionen eines „Telefons“. -> Telefonieren, Nachrichten schreiben, im Internet surfen.
+- Frage: Errate das Wort: Ein Gerät, das man zum Telefonieren benutzt. -> Handy.
 
 B1:
-- Frage: Diskutiere, warum „Nachhaltigkeit“ für Unternehmen wichtig ist.
-- Frage: Beschreibe, wann man eine „Jacke“ trägt.
-- Frage: Errate das Wort: Ein Kleidungsstück, das man im Winter trägt.
-- Frage: Diskutiere die Auswirkungen von „Klimawandel“ auf den Planeten.
-- Frage: Erkläre, warum ein „Schlüssel“ wichtig ist.
-- Frage: Errate das Wort: Ein Gegenstand, mit dem man Türen öffnet.
+- Frage: Diskutiere, warum „Nachhaltigkeit“ für Unternehmen wichtig ist. -> Nachhaltigkeit hilft, die Umwelt zu schützen und Ressourcen zu sparen.
+- Frage: Beschreibe, wann man eine „Jacke“ trägt. -> Wenn es kalt ist oder regnet.
+- Frage: Errate das Wort: Ein Kleidungsstück, das man im Winter trägt. -> Mantel.
+- Frage: Diskutiere die Auswirkungen von „Klimawandel“ auf den Planeten. -> Der Klimawandel führt zu extremer Hitze, Stürmen und steigendem Meeresspiegel.
+- Frage: Erkläre, warum ein „Schlüssel“ wichtig ist. -> Er öffnet und schließt Türen.
+- Frage: Errate das Wort: Ein Gegenstand, mit dem man Türen öffnet. -> Schlüssel.
 
 B2:
-- Frage: Analysiere, wie „Globalisierung“ die lokale Wirtschaft verändert.
-- Frage: Beschreibe, wofür man „Papier“ im Alltag verwendet.
-- Frage: Errate das Wort: Ein Material, auf dem man schreibt.
-- Frage: Analysiere, wie „Nachhaltigkeit“ die Arbeitswelt beeinflusst.
-- Frage: Erkläre, warum „Geld“ in der Gesellschaft wichtig ist.
-- Frage: Errate das Wort: Ein Zahlungsmittel.
+- Frage: Analysiere, wie „Globalisierung“ die lokale Wirtschaft verändert. -> Sie bringt mehr Wettbewerb, aber auch neue Chancen für Unternehmen.
+- Frage: Beschreibe, wofür man „Papier“ im Alltag verwendet. -> Zum Schreiben, Drucken und Verpacken.
+- Frage: Errate das Wort: Ein Material, auf dem man schreibt. -> Papier.
+- Frage: Analysiere, wie „Nachhaltigkeit“ die Arbeitswelt beeinflusst. -> Unternehmen müssen umweltfreundlicher handeln und Ressourcen effizient nutzen.
+- Frage: Erkläre, warum „Geld“ in der Gesellschaft wichtig ist. -> Geld ermöglicht den Kauf von Waren und Dienstleistungen.
+- Frage: Errate das Wort: Ein Zahlungsmittel. -> Geld.
 
 C1:
-- Frage: Diskutiere, welche ethischen Implikationen die „Künstliche Intelligenz“ mit sich bringt.
-- Frage: Beschreibe, warum „Schuhe“ im Alltag wichtig sind.
-- Frage: Errate das Wort: Ein Kleidungsstück, das man an den Füßen trägt.
-- Frage: Diskutiere die Auswirkungen der „Globalisierung“ auf Kulturen.
-- Frage: Erkläre, warum ein „Stift“ auch heute noch nützlich ist.
-- Frage: Errate das Wort: Ein Gegenstand, den man zum Schreiben benutzt.
+- Frage: Diskutiere, welche ethischen Implikationen die „Künstliche Intelligenz“ mit sich bringt. -> Sie kann Entscheidungen beeinflussen, aber auch Arbeitsplätze ersetzen.
+- Frage: Beschreibe, warum „Schuhe“ im Alltag wichtig sind. -> Sie schützen die Füße und sorgen für Komfort.
+- Frage: Errate das Wort: Ein Kleidungsstück, das man an den Füßen trägt. -> Schuhe.
+- Frage: Diskutiere die Auswirkungen der „Globalisierung“ auf Kulturen. -> Kulturen vermischen sich, aber manche Traditionen gehen verloren.
+- Frage: Erkläre, warum ein „Stift“ auch heute noch nützlich ist. -> Man kann damit schnell Notizen machen, ohne Strom zu benötigen.
+- Frage: Errate das Wort: Ein Gegenstand, den man zum Schreiben benutzt. -> Stift.
 
 C2:
-- Frage: Analysiere die ethischen Implikationen des „Klimawandels“ für die Gesellschaft.
-- Frage: Beschreibe, wofür man eine „Tasche“ im Alltag verwendet.
-- Frage: Errate das Wort: Ein Gegenstand, den man trägt, um Dinge zu transportieren.
-- Frage: Analysiere, wie „Blockchain“ die Finanzwelt revolutioniert.
-- Frage: Erkläre, warum ein „Bild“ in der Kunst wichtig ist.
-- Frage: Errate das Wort: Ein Gegenstand, der Bilder zeigt.
+- Frage: Analysiere die ethischen Implikationen des „Klimawandels“ für die Gesellschaft. -> Menschen müssen nachhaltiger leben, um zukünftige Generationen zu schützen.
+- Frage: Beschreibe, wofür man eine „Tasche“ im Alltag verwendet. -> Zum Transportieren von Gegenständen.
+- Frage: Errate das Wort: Ein Gegenstand, den man trägt, um Dinge zu transportieren. -> Tasche.
+- Frage: Analysiere, wie „Blockchain“ die Finanzwelt revolutioniert. -> Sie ermöglicht sichere und transparente Transaktionen ohne Banken.
+- Frage: Erkläre, warum ein „Bild“ in der Kunst wichtig ist. -> Es drückt Emotionen und Geschichten aus.
+- Frage: Errate das Wort: Ein Gegenstand, der Bilder zeigt. -> Gemälde.
