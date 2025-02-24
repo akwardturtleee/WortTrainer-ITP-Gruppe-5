@@ -160,10 +160,10 @@ public class SpielModus extends JPanel implements ActionListener {
 		g.drawLine(x + 50, y - 100, x + 50, y - 50);  // Seil vom Querbalken zum Kopf
 
 		if (fehlversuche > 0) g.drawOval(150, 80, 50, 50); // Kopf
-		if (fehlversuche > 1) g.drawLine(200, 130, 200, 200); // Körper
-		if (fehlversuche > 2) g.drawLine(200, 150, 170, 180); // linker Arm
-		if (fehlversuche > 3) g.drawLine(200, 150, 230, 180); // rechter Arm
-		if (fehlversuche > 4) g.drawLine(200, 200, 170, 250); // linkes Bein
-		if (fehlversuche > 5) g.drawLine(200, 200, 230, 250); // rechtes Bein
+		if (fehlversuche > 1) g.drawLine(150, 130, 200, 200); // Körper
+		if (fehlversuche > 2) g.drawLine(150, 150, 170, 180); // linker Arm
+		if (fehlversuche > 3) g.drawLine(150, 150, 230, 180); // rechter Arm
+		if (fehlversuche > 4) g.drawLine(150, 200, 170, 250); // linkes Bein
+		if (fehlversuche > 5) g.drawLine(150, 200, 230, 250); // rechtes Bein
 	}
 }
