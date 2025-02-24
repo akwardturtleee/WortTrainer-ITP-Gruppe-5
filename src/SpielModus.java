@@ -145,25 +145,27 @@ public class SpielModus extends JPanel implements ActionListener {
 	private void zeichneHangman(Graphics g, int fehlversuche) {
 		// Hangman-Grafik Schritt für Schritt basierend auf den Fehlversuchen
 		int x = 50; // Ursprungspunkt
-		int y = 200; // Ausgangspunkt für die Basis
+		int y = 150; // Ausgangspunkt für die Basis
 
-		// Basis
-		g.drawLine(x, y, x + 100, y);  // Basis des Galgens
+		// Basis des Galgens
+		g.drawLine(x, y, x + 100, y);
 
-		// Stange (vertikal)
-		g.drawLine(x + 50, y, x + 50, y - 100);  // Vertikale Stange
+		// Vertikale Stange
+		g.drawLine(x + 50, y, x + 50, y - 150);
 
-		// Querbalken
-		g.drawLine(x + 50, y - 100, x + 100, y - 100);  // Querbalken oben
+		// Querbalken oben
+		g.drawLine(x + 50, y - 150, x + 100, y - 150);
 
-		// Seil (zum Kopf)
-		g.drawLine(x + 50, y - 100, x + 50, y - 50);  // Seil vom Querbalken zum Kopf
+		// Seil
+		g.drawLine(x + 100, y - 150, x + 100, y - 120);
 
-		if (fehlversuche > 0) g.drawOval(150, 80, 50, 50); // Kopf
-		if (fehlversuche > 1) g.drawLine(150, 130, 200, 200); // Körper
-		if (fehlversuche > 2) g.drawLine(150, 150, 170, 180); // linker Arm
-		if (fehlversuche > 3) g.drawLine(150, 150, 230, 180); // rechter Arm
-		if (fehlversuche > 4) g.drawLine(150, 200, 170, 250); // linkes Bein
-		if (fehlversuche > 5) g.drawLine(150, 200, 230, 250); // rechtes Bein
+		// Zeichnen des Hangman je nach Fehlversuchen
+		if (fehlversuche > 0) g.drawOval(x + 75, y - 120, 50, 50); // Kopf
+		if (fehlversuche > 1) g.drawLine(x + 100, y - 70, x + 100, y - 20); // Körper
+		if (fehlversuche > 2) g.drawLine(x + 100, y - 60, x + 80, y - 40); // linker Arm
+		if (fehlversuche > 3) g.drawLine(x + 100, y - 60, x + 120, y - 40); // rechter Arm
+		if (fehlversuche > 4) g.drawLine(x + 100, y - 20, x + 80, y); // linkes Bein
+		if (fehlversuche > 5) g.drawLine(x + 100, y - 20, x + 120, y ); // rechtes Bein
+
 	}
 }
