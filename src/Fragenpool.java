@@ -18,12 +18,15 @@ public class Fragenpool {
             String currentLevel = "";
             while ((line = br.readLine()) != null) {
                 if (line.trim().isEmpty()) continue;
-
                 if (line.endsWith(":")) {
                     currentLevel = line.substring(0, line.length() - 1).trim();
                 } else if (line.startsWith("- Frage:")) {
-                    String frageText = line.substring(9).trim();
-                    String antwortText = br.readLine().substring(10).trim(); // Read the next line for the answer
+                    String content = line.substring(9).trim();
+                    // Split the line by the delimiter "->"
+                    String[] parts = content.split("->");
+                    String frageText = parts[0].trim();
+                    String antwortText = parts.length > 1 ? parts[1].trim() : "";
+                    // Create a Frage instance with the cleaned text and current level.
                     fragen.add(new Frage(frageText, antwortText, currentLevel));
                 }
             }
