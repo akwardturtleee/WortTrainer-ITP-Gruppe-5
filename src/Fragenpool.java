@@ -9,11 +9,11 @@ public class Fragenpool {
 
     public Fragenpool() {
         fragen = new ArrayList<>();
-        ladeFragenAusDatei("src/textfile.txt");
+        ladeFragenAusDatei();
     }
 
-    private void ladeFragenAusDatei(String dateiname) {
-        try (BufferedReader br = new BufferedReader(new FileReader(dateiname))) {
+    private void ladeFragenAusDatei() {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/textfile.txt"))) {
             String line;
             String currentLevel = "";
             while ((line = br.readLine()) != null) {
@@ -28,7 +28,7 @@ public class Fragenpool {
                 }
             }
         } catch (FileNotFoundException e) {
-            System.err.println("Fehler: Die Datei " + dateiname + " wurde nicht gefunden.");
+            System.err.println("Fehler: Die Datei " + "src/textfile.txt" + " wurde nicht gefunden.");
         } catch (IOException e) {
             System.err.println("Fehler beim Lesen der Datei: " + e.getMessage());
         } catch (Exception e) {
