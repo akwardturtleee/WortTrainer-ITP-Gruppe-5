@@ -141,9 +141,6 @@ public class Nutzer extends JPanel {
         JOptionPane.showMessageDialog(this, "Nutzerdaten erfolgreich gespeichert!", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
     }
 
-
-
-
     private static boolean isValidEmail(String email) {
         String emailRegex = "^[\\w-.+]+@[\\w-]+\\.[a-z]{2,6}$";
         return Pattern.matches(emailRegex, email);
