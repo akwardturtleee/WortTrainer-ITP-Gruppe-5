@@ -77,6 +77,8 @@ public class SettingsPanel extends JPanel {
         SettingsManager.setSprachniveau(sprachlevel);
         saveFileContent("src/textfile.txt", textFileEditor.getText());
         saveFileContent("src/hangman_words.txt", hangmanWordsEditor.getText());
+        JOptionPane.showMessageDialog(this, "Einstellungen wurden erfolgreich gespeichert.",
+                "Speichern", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void saveFileContent(String filePath, String content) {
@@ -86,4 +88,5 @@ public class SettingsPanel extends JPanel {
             e.printStackTrace();
         }
     }
+
 }
