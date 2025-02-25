@@ -1,47 +1,93 @@
 A1:
-- Frage: Beschreibe, wofür man ein „Auto“ benutzt. -> Zum Fahren von einem Ort zum anderen.
-- Frage: Errate das Wort: Ein Tier, das miaut. -> Katze
-- Frage: Nenne drei verschiedene Arten von „Blumen“. -> Rose, Tulpe, Sonnenblume
-- Frage: Errate das Wort: Ein Möbelstück, auf dem man sitzt. -> Stuhl
-- Frage: Erkläre, warum ein „Fenster“ wichtig ist. -> Es lässt Licht und frische Luft in den Raum.
-- Frage: Errate das Wort: Ein Gegenstand, der Fenster schließt. -> Rollladen
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.wolfhaus.at/wp-content/uploads/musterhaus-wien169-wolf-haus.jpg -> Haus
+- Frage1: Errate das Wort: Ein Tier, das bellt? -> Hund
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://i.auto-bild.de/ir_img/1/7/6/3/5/7/9/Alle-Auto-Neuheiten-2019-1200x800-6c8dd7b8846a4193.jpg ? -> Auto
+- Frage1: Errate das Wort: Ein Tier, das miaut? -> Katze
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://info.bml.gv.at/.imaging/mte/bcisa/bcisa-full/dam/bm/themen/wald/wald-in-oesterreich/wald-und-biodiversitaet/baum-des-jahres-2024-eiche/oak-354641_1280.jpg/jcr:content/oak-354641_1280.jpg -> Baum
+- Frage1: Errate das Wort: Ein Ort, wo man lernt? -> Schule
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://cdn.connox.at/m/100030/280976/media/yunic/Frankfurter-Stuhl/yunic-Frankfurter-Stuhl-2-Buche-geoelt.jpg -> Stuhl
+- Frage1: Errate das Wort: Ein Möbelstück, auf dem man sitzt? -> Stuhl
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.steinershopping.at/media/mf_webp/jpg/media/catalog/product/cache/3c0b12cec63083e386fe3f6df73f2f21/vv_img/2/4/240_abc_1_1_1.webp -> Tisch
+- Frage1: Errate das Wort: Ein Möbelstück, auf dem man schreibt? -> Tisch
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://assets.pixolum.com/blog/wp-content/uploads/2019/09/Blumen-Fotografieren-50mm-800x533.jpg -> Blume
+- Frage1: Errate das Wort: Eine Pflanze, die blüht? -> Blume
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://wasliestdu.de/dateien/styles/680x380/public/artikel/die-leere-nach-einem-guten-buch.jpg?itok=JmYo77_N -> Buch
+- Frage1: Errate das Wort: Ein Gegenstand, den man liest? -> Buch
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://api.ardmediathek.de/image-service/images/urn:ard:image:c6f009b53dc0bbc2?w=960&ch=45668a0c08e47f94&imwidth=960 -> Hund
+- Frage1: Errate das Wort: Ein Tier, das bellt? -> Hund
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hauskatze_langhaar.jpg/800px-Hauskatze_langhaar.jpg -> Katze
+- Frage1: Errate das Wort: Ein Tier, das miaut? -> Katze
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://new.schubertschule.at/wp-content/uploads/2023/09/DSC_4330-scaled-768x510.jpg -> Schule
+- Frage1: Errate das Wort: Ein Ort, wo man lernt? -> Schule
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.josefsteiner.at/media/catalog/product/cache/8368fbdc5eb67d012862f56b97d2f68c/K/u/Kunststoff-Fenster_weiss_-_Anschlagrichtung_DIN-rechts_Breite_1000_mm_Hohe_1200_mm-FE-100120-2R-12263-1.jpg -> Fenster
+- Frage1: Errate das Wort: Ein Gegenstand, durch das man durchschauen kann? -> Fenster
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.rudda.at/wp-content/uploads/produktbilder/BTLI02RL/KM_Roundline_Ahorn.jpg -> Tür
+- Frage1: Errate das Wort: Ein Gegenstand, durch das man durchgehen kann? -> Tür
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.lampe-shop.at/media/magefan_blog/iStock-859452426-1024x683.jpg -> Lampe
+- Frage1: Errate das Wort: Ein Gegenstand, der Licht gibt? -> Lampe
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://images2.naintrading.com/data/carpets/59-308162-311x215-01.jpg -> Teppich
+- Frage1: Errate das Wort: Ein Gegenstand, der auf dem Boden liegt? -> Teppich
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://cdn1.vente-unique.com/thumbnails/product/776/776491/product_raw/xs/bett_19974069.jpg -> Bett
+- Frage1: Errate das Wort: Ein Möbelstück, auf dem man schläft? -> Bett
 
 A2:
-- Frage: Erkläre den Begriff „Energie“ in einfachen Worten. -> Energie ist die Kraft, die Dinge bewegt oder zum Leuchten bringt.
-- Frage: Beschreibe, wofür man einen „Kühlschrank“ braucht. -> Zum Kühlen und Frischhalten von Lebensmitteln.
-- Frage: Errate das Wort: Ein Gerät, das kühlt. -> Kühlschrank
-- Frage: Erkläre den Begriff „Fotosynthese“ in einem Satz. -> Pflanzen nutzen Licht, um Nahrung und Sauerstoff zu erzeugen.
-- Frage: Nenne drei Funktionen eines „Telefons“. -> Telefonieren, Nachrichten schreiben, im Internet surfen.
-- Frage: Errate das Wort: Ein Gerät, das man zum Telefonieren benutzt. -> Handy
+- Frage1: Errate das Wort: Ein Verkehrsmittel, das unter der Erde fährt? -> U-Bahn
+- Frage1: Errate das Wort: Ein Gerät, das Speisen erwärmt? -> Mikrowelle
+- Frage1: Errate das Wort: Ein Ort, an dem Filme gezeigt werden? -> Kino
+- Frage1: Errate das Wort: Ein Monat im Hochsommer? -> Juli
+- Frage1: Errate das Wort: Ein Kleidungsstück, das man bei Regen trägt? -> Regenjacke
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://upload.wikimedia.org/wikipedia/commons/2/2e/U3_Ottakring_X_3707_2024-04-26.jpg -> U-Bahn
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://media.medion.com/prod/medion/de_DE/0731/0726/0731/78271_MD_11499_G1_3000x3000_DE_Logo_Neu.png?w=2800 -> Mikrowelle
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.umweltzeichen.at/site/assets/files/4108/schubert_kino_saalansicht_c-mavric_cm81785.535x300.jpg -> Kino
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.bfgcdn.com/1500_1500_90/002-2796-0411/schoeffel-jacket-gmund-regenjacke.jpg -> Jacke
 
 B1:
-- Frage: Diskutiere, warum „Nachhaltigkeit“ für Unternehmen wichtig ist. -> Nachhaltigkeit hilft, die Umwelt zu schützen und Ressourcen zu sparen.
-- Frage: Beschreibe, wann man eine „Jacke“ trägt. -> Wenn es kalt ist oder regnet.
-- Frage: Errate das Wort: Ein Kleidungsstück, das man im Winter trägt. -> Mantel
-- Frage: Diskutiere die Auswirkungen von „Klimawandel“ auf den Planeten. -> Der Klimawandel führt zu extremer Hitze, Stürmen und steigendem Meeresspiegel.
-- Frage: Erkläre, warum ein „Schlüssel“ wichtig ist. -> Er öffnet und schließt Türen.
-- Frage: Errate das Wort: Ein Gegenstand, mit dem man Türen öffnet. -> Schlüssel
+- Frage1: Errate das Wort: Ein Gerät, mit dem man Fotos macht? -> Kamera
+- Frage1: Errate das Wort: Ein Ort, an dem man Kunst sieht? -> Museum
+- Frage1: Errate das Wort: Ein elektronisches Gerät zum Schreiben? -> Laptop
+- Frage1: Errate das Wort: Ein Kleidungsstück für den Sommer? -> T-Shirt
+- Frage1: Errate das Wort: Eine Sportart, die man im Wasser spielt? -> Wasserball
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://i1.adis.ws/i/canon/eos-r6-rf24-105mm-f4_7.1_is_stm_front-on_square_6412568cc0e7484b96bd55e43069a56c?$prod-grid-1by1-jpg$ -> Kamera
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.wienmuseum.at/items/uploads/images/1728045409_71JaepuwVZfo.jpg -> Museum
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://gfx3.senetic.com/akeneo-catalog/f/6/e/6/f6e64a862fe63da6a23c2f90d2e0ed5f3f3a1775_1626671_5V8_00009_image1.jpg -> Laptop
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/T26252s4.jpg?im=Resize,width=750 -> T-Shirt
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.gigasport.at/bestway-wasserball-1-768_1024_75-7168351_1.webp -> Wasserball
 
 B2:
-- Frage: Analysiere, wie „Globalisierung“ die lokale Wirtschaft verändert. -> Sie bringt mehr Wettbewerb, aber auch neue Chancen für Unternehmen.
-- Frage: Beschreibe, wofür man „Papier“ im Alltag verwendet. -> Zum Schreiben, Drucken und Verpacken.
-- Frage: Errate das Wort: Ein Material, auf dem man schreibt. -> Papier
-- Frage: Analysiere, wie „Nachhaltigkeit“ die Arbeitswelt beeinflusst. -> Unternehmen müssen umweltfreundlicher handeln und Ressourcen effizient nutzen.
-- Frage: Erkläre, warum „Geld“ in der Gesellschaft wichtig ist. -> Geld ermöglicht den Kauf von Waren und Dienstleistungen.
-- Frage: Errate das Wort: Ein Zahlungsmittel. -> Geld
+- Frage1: Errate das Wort: Ein Gerät, das Texte druckt? -> Drucker
+- Frage1: Errate das Wort: Ein Naturphänomen, das Blitze erzeugt? -> Gewitter
+- Frage1: Errate das Wort: Eine Sportart, die man im Wasser macht? -> Schwimmen
+- Frage1: Errate das Wort: Ein Beruf, der Gebäude plant? -> Architekt
+- Frage1: Errate das Wort: Ein Land, das für Pizza bekannt ist? -> Italien
+Frage2: Wie schreibt man das Wort? siehe Bild: https://i1.adis.ws/i/canon/eos-r6-rf24-105mm-f4_7.1_is_stm_front-on_square_6412568cc0e7484b96bd55e43069a56c?$prod-grid-1by1-jpg$ -> Kamera
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://i8.amplience.net/i/epsonemear/a17839-productpicture-hires-de-de-et-1810-1_header_2000x2000?$product-xlarge$&fmt=auto&img404=missing_product&v=1 -> Drucker
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.weltderphysik.de/fileadmin/_processed_/9/4/csm_16920210329_Blitz-Wolke_mdesigner125istock_bcf073f191.jpg -> Gewitter
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://edit.meinmed.at/assets/7f4c2b9f-17c7-4434-9651-ea89b296cf50?key=content-image-1600x900 -> Schwimmen
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.talu.de/wp-content/uploads/2018/09/was-kostet-ein-architekt-192461-fp.jpg -> Architekt
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.italien-reiseinformationen.com/wp-content/uploads/2019/04/italien-landkarte.jpg -> Italien
 
 C1:
-- Frage: Diskutiere, welche ethischen Implikationen die „Künstliche Intelligenz“ mit sich bringt. -> Sie kann Entscheidungen beeinflussen, aber auch Arbeitsplätze ersetzen.
-- Frage: Beschreibe, warum „Schuhe“ im Alltag wichtig sind. -> Sie schützen die Füße und sorgen für Komfort.
-- Frage: Errate das Wort: Ein Kleidungsstück, das man an den Füßen trägt. -> Schuhe
-- Frage: Diskutiere die Auswirkungen der „Globalisierung“ auf Kulturen. -> Kulturen vermischen sich, aber manche Traditionen gehen verloren.
-- Frage: Erkläre, warum ein „Stift“ auch heute noch nützlich ist. -> Man kann damit schnell Notizen machen, ohne Strom zu benötigen.
-- Frage: Errate das Wort: Ein Gegenstand, den man zum Schreiben benutzt. -> Stift
+- Frage1: Errate das Wort: Ein wissenschaftlicher Begriff für Erdbeben? -> Seismus
+- Frage1: Errate das Wort: Eine politische Ideologie, die Gleichheit betont? -> Sozialismus
+- Frage1: Errate das Wort: Ein chemisches Element mit dem Symbol „Fe“? -> Eisen
+- Frage1: Errate das Wort: Ein literarisches Werk, das in Versform geschrieben ist? -> Gedicht
+- Frage1: Errate das Wort: Ein philosophischer Begriff für das „Selbst“? -> Ego
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://c8.alamy.com/compde/2e5bt6h/erdbeben-seismus-katastrophe-naturkatastrophe-flache-farblinie-symbol-2e5bt6h.jpg -> Seismus
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.zeitklicks.de/fileadmin/_processed_/5/8/csm_sozialismus-definition-1707_cce2745614.jpg -> Sozialismus
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.wissenschaft.de/wp-content/uploads/M/e/Meteorit-3.jpg -> Eisen
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://cdn-icons-png.flaticon.com/512/2633/2633072.png -> Gedicht
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://gosmallbiz.com/wp-content/uploads/2019/03/Ego-Trap.jpg -> Ego
 
 C2:
-- Frage: Analysiere die ethischen Implikationen des „Klimawandels“ für die Gesellschaft. -> Menschen müssen nachhaltiger leben, um zukünftige Generationen zu schützen.
-- Frage: Beschreibe, wofür man eine „Tasche“ im Alltag verwendet. -> Zum Transportieren von Gegenständen.
-- Frage: Errate das Wort: Ein Gegenstand, den man trägt, um Dinge zu transportieren. -> Tasche
-- Frage: Analysiere, wie „Blockchain“ die Finanzwelt revolutioniert. -> Sie ermöglicht sichere und transparente Transaktionen ohne Banken.
-- Frage: Erkläre, warum ein „Bild“ in der Kunst wichtig ist. -> Es drückt Emotionen und Geschichten aus.
-- Frage: Errate das Wort: Ein Gegenstand, der Bilder zeigt. -> Gemälde
+- Frage1: Errate das Wort: Ein philosophisches Konzept, das „Seinszustand“ beschreibt? -> Existenz
+- Frage1: Errate das Wort: Ein Fachbegriff für die Kunst der Argumentation? -> Rhetorik
+- Frage1: Errate das Wort: Ein biologischer Begriff für „Zellteilung“? -> Mitose
+- Frage1: Errate das Wort: Ein wirtschaftlicher Begriff für die „Gesamtproduktion eines Landes“? -> Bruttoinlandsprodukt
+- Frage1: Errate das Wort: Ein juristischer Begriff für „Schuldlosigkeit“? -> Unschuld
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://www.langenachtderphilosophie.ch/wp-content/uploads/2017/07/17-Bild-728x728-390x390.jpg -> Existenz
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://arbeits-abc.de/wp-content/uploads/2020/08/rhetorik_im_job.jpg -> Rhetorik
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://dccdn.de/www.doccheck.com/data/sr/me/3u/k9/85/vz/mitose__1__md.jpg -> Mitose
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZaO2bJ9EosSklkVMAOy4l8Y0Q5stRqZsN_A&s -> Bruttoinlandsprodukt
+- Frage2: Wie schreibt man das Wort? siehe Bild: https://as1.ftcdn.net/jpg/00/54/90/40/1000_F_54904013_Io1l4ZtpaaLslCO1ZlKFAdhoo862fDvo.jpg -> Unschuld
+
+
