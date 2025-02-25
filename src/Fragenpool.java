@@ -1,3 +1,4 @@
+// File: src/Fragenpool.java
 package src;
 
 import java.io.*;
@@ -17,25 +18,25 @@ public class Fragenpool {
             String line;
             String currentLevel = "";
             while ((line = br.readLine()) != null) {
-                if (line.trim().isEmpty()) continue;
+                line = line.trim();
+                if (line.isEmpty()) continue;
                 if (line.endsWith(":")) {
                     currentLevel = line.substring(0, line.length() - 1).trim();
-                } else if (line.startsWith("- Frage:")) {
-                    String content = line.substring(9).trim();
-                    // Split the line by the delimiter "->"
+                } else if (line.startsWith("- Frage")) { // supports both Frage1 and Frage2
+                    // Extract question text and answer split by "->"
+                    String content = line.substring(line.indexOf(":") + 1).trim();
                     String[] parts = content.split("->");
                     String frageText = parts[0].trim();
                     String antwortText = parts.length > 1 ? parts[1].trim() : "";
-                    // Create a Frage instance with the cleaned text and current level.
                     fragen.add(new Frage(frageText, antwortText, currentLevel));
                 }
             }
         } catch (FileNotFoundException e) {
-            System.err.println("Fehler: Die Datei " + "src/textfile.txt" + " wurde nicht gefunden.");
+            System.err.println("Error: File src/textfile.txt not found.");
         } catch (IOException e) {
-            System.err.println("Fehler beim Lesen der Datei: " + e.getMessage());
+            System.err.println("Error reading file: " + e.getMessage());
         } catch (Exception e) {
-            System.err.println("Ein unerwarteter Fehler ist aufgetreten: " + e.getMessage());
+            System.err.println("Unexpected error: " + e.getMessage());
         }
     }
 

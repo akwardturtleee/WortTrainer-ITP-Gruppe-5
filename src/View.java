@@ -1,7 +1,7 @@
+// File: src/View.java
 package src;
 
 import javax.swing.*;
-import javax.swing.event.MenuKeyEvent;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -13,7 +13,7 @@ public class View extends JFrame {
     private JPanel mainPanel;
     private JProgressBar progressBar;
 
-    public View(Controller controller) {
+    public View(Controller controller, SpielModus spielModus, QuizModus quizModus, SettingsPanel settingsPanel) {
         this.controller = controller;
         frame = new JFrame("WortTrainer");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,21 +30,17 @@ public class View extends JFrame {
         homePanel.add(schriftLabel);
         homePanel.setBackground(new Color(100, 149, 237));
 
-        // User Panel
-        JPanel userPanel = new Nutzer(controller);
-        //userPanel.setBackground(new Color(100, 149, 237));
-
         // Quiz Panel with default language level "A1"
-        JPanel quizPanel = new QuizModus(controller, new Fragenpool(),"A1");
+        JPanel quizPanel = quizModus;
 
         // Spiel Panel
-        JPanel spielPanel = new SpielModus(controller);
+        JPanel spielPanel = spielModus;
 
         // Add panels to main panel using card layout
         mainPanel.add(homePanel, "home");
-        mainPanel.add(userPanel, "benutzer");
         mainPanel.add(quizPanel, "quiz");
         mainPanel.add(spielPanel, "spiel");
+        mainPanel.add(settingsPanel, "settings");
 
         // Create menu bar and menus
         JMenuBar menuBar = new JMenuBar();
@@ -59,9 +55,7 @@ public class View extends JFrame {
         home.setHorizontalTextPosition(SwingConstants.CENTER);
         home.setVerticalTextPosition(SwingConstants.CENTER);
         home.setAlignmentY(Component.CENTER_ALIGNMENT);
-        // Use HTML to center both the icon and label within the square.
         home.setText("<html><div style='text-align:center;'>&#8962;<br>Home</div></html>");
-        // Add a mouse listener to trigger home navigation on click.
         home.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -78,7 +72,6 @@ public class View extends JFrame {
         spiel.setVerticalTextPosition(SwingConstants.CENTER);
         spiel.setAlignmentY(Component.CENTER_ALIGNMENT);
         spiel.setText("<html><div style='text-align:center;'>Spiel</div></html>");
-        // Add items if needed or add a mouse listener similar to home for direct navigation.
         JMenuItem spielItem = new JMenuItem("Starten");
         spielItem.setMnemonic('S');
         spielItem.setActionCommand("spiel");
@@ -132,29 +125,8 @@ public class View extends JFrame {
         settingsMenu.add(infosItem);
         menuBar.add(settingsMenu);
 
-        // User menu with a user icon using HTML for centered text.
-        JMenu userMenu = new JMenu();
-        userMenu.setPreferredSize(squareSize);
-        userMenu.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
-        userMenu.setHorizontalTextPosition(SwingConstants.CENTER);
-        userMenu.setVerticalTextPosition(SwingConstants.CENTER);
-        userMenu.setAlignmentY(Component.CENTER_ALIGNMENT);
-        userMenu.setText("<html><div style='text-align:center;'>&#128100; Profil</div></html>");
-        JMenuItem profileItem = new JMenuItem("Profil");
-        profileItem.setMnemonic('P');
-        profileItem.setActionCommand("benutzer");
-        profileItem.addActionListener(controller);
-        JMenuItem progressItem = new JMenuItem("Fortschritt");
-        progressItem.setMnemonic('F');
-        progressItem.setActionCommand("benutzer2");
-        progressItem.addActionListener(controller);
-        userMenu.add(profileItem);
-        userMenu.add(progressItem);
-        menuBar.add(userMenu);
-
         JPanel menuPanel = new JPanel(new BorderLayout());
         menuPanel.add(menuBar, BorderLayout.CENTER);
-        // Increased the menu panel height from 18 to 75
         menuPanel.setPreferredSize(new Dimension(frame.getWidth(), 75));
 
         // Progress bar at the bottom of the frame
@@ -165,13 +137,10 @@ public class View extends JFrame {
         // Assemble the frame
         frame.add(menuPanel, BorderLayout.NORTH);
         frame.add(mainPanel, BorderLayout.CENTER);
-        //frame.add(progressBar, BorderLayout.SOUTH);
         frame.setVisible(true);
     }
 
     public void showCard(String name) {
         cardLayout.show(mainPanel, name);
     }
-
-
 }
